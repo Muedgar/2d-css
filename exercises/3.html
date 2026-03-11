@@ -1,45 +1,60 @@
-<!-- target mistakes invested: 100,000 -->
-<!-- 100,000 -->
-<!-- 23 [1,000] -->
-
-<!-- drawing -->
-<!-- animation -->
-<!-- story -->
-<!-- communicate technique -->
-
-<!-- 
-### 3. A Mechanical Watch (Inside View)
-
-This is extremely intricate.
-
-Challenges:
-
-* Dozens of tiny gears
-* Precise mechanical shapes
-* Repeating patterns
-
-Great if you like **engineering precision**.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        html {
-            width: 100vw;
-            height: 100vh;
-            background: 
-                radial-gradient(white 20%, yellow 20%),
-                radial-gradient(black 50%, rgba(0, 128, 0, 0) 50%),
-                ;
-            background-repeat: no-repeat;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smooth Gradient Motion</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .box {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: yellow;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      width: 120vmax;
+      height: 120vmax;
+      left: -30vmax;
+      top: -30vmax;
+      background: radial-gradient(circle, black 8%, yellow 50%);
+      filter: blur(100px);
+      animation: moveBlob 12s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes moveBlob {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(20vw, 15vh);
+      }
+      50% {
+        transform: translate(40vw, 25vh);
+      }
+      75% {
+        transform: translate(55vw, 45vh);
+      }
+      100% {
+        transform: translate(70vw, 60vh);
+      }
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="box"></div>
 </body>
 </html>
