@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .cartoon {
-            position: absolute;
-            bottom: 40%;
-            left: 50%;
-            transform: translate(-50%, 0);
-        }
-        .face {
-            width: 300px;
-            height: 300px;
-            background-color: bisque;
-            border-radius: 100% / 120% 120% 80% 80%;
-            border: 0.7vmin solid;
-            border-bottom: 1vmin solid;
-            border-top-color: bisque;
-            border-left: 0.1vmin solid bisque;
-            transform: translate(-50%, 0) rotate(-15deg)
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+  overflow: hidden;
+  background: rgba(161, 182, 202, 0.533);
+}
+
+.cartoon {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 80vmin;
+  height: 80vmin;
+}
+
+.cartoon div {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/****/
+.cartoon {
+  --skin: #fca;
+  --skin-dark: #fb9;
+  --cap-light: #fff; 
+  --cap-dark: #eee;
+  --cap-lid: #777;
+  --cap-front: #8f5158;
+  --cap-front-dark: #7f4148;
+}
+
+
+.face {
+  width: 50%;
+  height: 60%;
+  background: var(--skin);
+  background-image: radial-gradient(circle at 55% 100%, rgba(0,0,0,0.075) 44%, transparent 0);
+  border: 0.75vmin solid;
+  border-bottom: 1vmin solid;
+  border-top-color: var(--skin);
+  border-left: 0.1vmin solid var(--skin);
+  border-radius: 100% / 120% 120% 80% 80%;
+  transform: translate(-50%, 0) rotate(-15deg);
+  left: 45%;
+  top: 33%;
+}
+
+.forehead {
+  width: 57%;
+  height: 60%;
+  background: var(--skin);
+  border: 0.75vmin solid;
+  border-radius: 50%;
+  left: 12.5%;
+  top: 13.5%;
+}
+
+
+.cap-line {
+  overflow: hidden;
+}
+
+.cap-line::after {
+  width: 66%;
+  height: 105%;
+  background: var(--cap-front);
+  border-radius: 50% 50% 0 40%;
+  border: 0.75vmin solid;
+  border-left: 1vmin solid;
+  border-right: 0.5vmin solid;
+  left: 23%;
+  top: -84%;
+  transform: rotate(-7deg) skew(-30deg);
+}
+
+  </style>
 </head>
 <body>
-    <div class="cartoon">
-        <div class="face"></div>
-    </div>
+  <div class="cartoon">
+  <div class="forehead"></div>
+  <div class="face"></div>
+</div>
 </body>
 </html>
