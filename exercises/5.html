@@ -1,160 +1,3 @@
-<!-- target mistakes invested: 100,000 -->
-<!-- 100,000 -->
-<!-- 23 [1,000] -->
-
-<!-- drawing -->
-<!-- animation -->
-<!-- story -->
-<!-- communicate technique -->
-
-<!-- 
-Drawing complex subjects is a great way to train **observation, patience, and spatial thinking**. Since you like structured challenges (like when you practice system design or Kanban engineering), you can treat drawing the same way: progressively harder problems. ✏️
-
-Here are **10 complex things to draw** that will really stretch your skills.
-
----
-
-### 1. A Human Hand in Perspective
-
-Hands are famously difficult because they combine:
-
-* **Anatomy** (bones, joints, tendons)
-* **Perspective** (fingers pointing toward the viewer)
-* **Subtle proportions**
-
-Why it's complex:
-
-* Many small shapes interacting
-* Easy to make look unnatural
-* Requires strong observation
-
----
-
-### 2. A Busy City Street
-
-This is like **drawing an entire system**.
-
-Challenges:
-
-* Linear perspective
-* Many objects (cars, buildings, signs, people)
-* Depth and scale
-
-It's similar to designing a **complex UI layout**, but with a pencil.
-
----
-
-### 3. A Mechanical Watch (Inside View)
-
-This is extremely intricate.
-
-Challenges:
-
-* Dozens of tiny gears
-* Precise mechanical shapes
-* Repeating patterns
-
-Great if you like **engineering precision**.
-
----
-
-### 4. A Human Face with Realistic Lighting
-
-Faces are difficult because humans instantly notice mistakes.
-
-Challenges:
-
-* Symmetry
-* Subtle shading
-* Expression
-
-Even a **1–2 mm mistake** can change the whole face.
-
----
-
-### 5. A Forest Scene with Many Trees
-
-Nature scenes are deceptively complex.
-
-Challenges:
-
-* Thousands of leaves
-* Depth layers
-* Random but believable structure
-
----
-
-### 6. A Glass Object with Reflections
-
-Glass is hard because you're drawing **light instead of the object**.
-
-Challenges:
-
-* Transparency
-* Distorted reflections
-* Strong highlights
-
----
-
-### 7. A Detailed Map of a City
-
-Think of this as **designing a system architecture diagram**, but artistic.
-
-Challenges:
-
-* Spatial layout
-* Street patterns
-* Hundreds of tiny details
-
----
-
-### 8. A Futuristic Sci-Fi City
-
-This mixes imagination with structure.
-
-Challenges:
-
-* Complex architecture
-* Lighting
-* Massive scale
-
----
-
-### 9. A Dragon with Scales
-
-Great for **imagination + anatomy**.
-
-Challenges:
-
-* Hundreds of scales
-* Wings structure
-* Dynamic pose
-
----
-
-### 10. A Full Construction Site
-
-You might like this one because you're building **construction management software**.
-
-Challenges:
-
-* Machinery
-* Buildings in progress
-* Workers and equipment
-* Perspective everywhere
-
----
-
-✅ **If you want**, I can also give you:
-
-* **10 drawing exercises used by Pixar artists**
-* **A 30-day drawing training plan**
-* **5 drawing problems as hard as algorithm problems (but for artists)**
-
-They’re surprisingly similar to how engineers train.
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,18 +5,81 @@ They’re surprisingly similar to how engineers train.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {
-            width: 100vw;
-            height: 100vh;
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aquamarine;
+        }
+        .cartoon {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 500px;
+            height: 500px;
+        }
+
+        .face {
+            background-color: rgba(233, 182, 112, 0.795);
+            width: 70%;
+            height: 80%;
+            border: 1vmin solid rgba(233, 182, 112, 0.795);
+            border-radius: 100% / 120% 120% 80% 80%;
+            border-left: .84 solid black;
+            transform: translate(25%, 0) rotate(-20deg);
+        }
+
+        .forehead {
+            width: 80%;
+            height: 70%;
+            background-color: rgba(233, 182, 112, 0.795);
+            border: 1vmin solid rgba(233, 182, 112, 0.795);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 50%;
+            left: 15%;
+        }
+
+        .eyes {
+            width: 100%;
+            height: 20%;
+            position: absolute;
+            bottom: 65%;
+        }
+
+        .eyes::before {
+            content: "";
+            width: 20%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 25%;
             background: 
-                radial-gradient(white 20%, yellow 20%),
-                radial-gradient(black 50%, rgba(0, 128, 0, 0) 50%),
-                ;
+               radial-gradient(circle at 52% 52%, black 20%, white 20%);
+            background-repeat: no-repeat;
+        }
+        
+        .eyes::after {
+            content: "";
+            width: 20%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 25%;
+            background: 
+               radial-gradient(circle at 52% 52%, black 20%, white 20%);
             background-repeat: no-repeat;
         }
     </style>
 </head>
 <body>
-    
+    <div class="cartoon">
+        <div class="face"></div>
+        <div class="forehead"></div>
+        <div class="eyes"></div>
+    </div>
 </body>
 </html>
