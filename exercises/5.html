@@ -5,81 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: aquamarine;
+        html, body {
+            overflow: hidden;
+            background: rgba(161, 182, 202, 0.533)
         }
+
         .cartoon {
             position: absolute;
             bottom: 10%;
             left: 50%;
             transform: translate(-50%, 0);
-            width: 500px;
-            height: 500px;
+            width: 80vmin;
+            height: 80vmin;
         }
 
-        .face {
-            background-color: rgba(233, 182, 112, 0.795);
+        .cartoon div {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .cartoon {
+            --skin: #fca;
+            --skin-dark: #fb9;
+            --cap-light: #fff;
+            --cap-dark: #eee;
+            --cap-lid: #777;
+            --cap-front: #8f5158;
+            --cap-front-dark: #7f4148;
+        }
+
+        .ear {
+            width: 20%;
+            height: 30%;
+            border-radius: 100% / 80% 80% 120% 125%;
+            border: 0.75vmin solid;
+            border-right: 1.125vmin solid var(--skin);
+            border-left: 1.1vmin solid;
+            background: var(--skin);
+            top: 50%;
+            left: 5%;
+            transform: rotate(-12deg)
+        }
+
+        .ear::before {
             width: 70%;
-            height: 80%;
-            border: 1vmin solid rgba(233, 182, 112, 0.795);
-            border-radius: 100% / 120% 120% 80% 80%;
-            border-left: .84 solid black;
-            transform: translate(25%, 0) rotate(-20deg);
-        }
-
-        .forehead {
-            width: 80%;
-            height: 70%;
-            background-color: rgba(233, 182, 112, 0.795);
-            border: 1vmin solid rgba(233, 182, 112, 0.795);
+            height: 60%;
+            border: 1.25vmin solid transparent;
+            border-top: 0.75vmin solid;
+            border-right: 0.5vmin solid;
             border-radius: 50%;
-            position: absolute;
-            bottom: 50%;
-            left: 15%;
+            top: 22%;
+            right: 15%;
+            box-shadow: inset -1.5vmin 2vmin 1vmin -0.5vmin var(--skin-dark)
         }
 
-        .eyes {
-            width: 100%;
+        .ear::after {
+            width: 30%;
             height: 20%;
-            position: absolute;
-            bottom: 65%;
+            border: 0.75vmin solid;
+            border-bottom: 0.25vmin solid transparent;
+            border-right: 0.75vmin solid transparent;
+            border-radius: 50%;
+            right: 17%;
+            top: 55%;
+            transform: rotate(30deg);
+            box-shadow: -2vmin -1vmin 1vmin 0.5vmin var(--skin-dark);
         }
 
-        .eyes::before {
-            content: "";
-            width: 20%;
-            height: 100%;
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 25%;
-            background: 
-               radial-gradient(circle at 52% 52%, black 20%, white 20%);
-            background-repeat: no-repeat;
-        }
-        
-        .eyes::after {
-            content: "";
-            width: 20%;
-            height: 100%;
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            right: 25%;
-            background: 
-               radial-gradient(circle at 52% 52%, black 20%, white 20%);
-            background-repeat: no-repeat;
+        .ear.ear-back {
+            border-left: 0.75vmin solid;
+            transform: scalex(-1) rotate(-10deg);
+            left: 52%;
+            top: 46%;
+            background-image: linear-gradient(to right, transparent, var(--skin-dark) 20%)
         }
     </style>
 </head>
 <body>
     <div class="cartoon">
-        <div class="face"></div>
-        <div class="forehead"></div>
-        <div class="eyes"></div>
+        <!-- ear -->
+        <div class="ear ear-back"></div>
+        <!-- nose -->
+        <!-- mouth -->
     </div>
 </body>
 </html>
