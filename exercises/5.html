@@ -6,87 +6,54 @@
     <title>Document</title>
     <style>
         html, body {
-            overflow: hidden;
-            background: rgba(161, 182, 202, 0.533)
+            margin: 0;
+            padding: 0;
+            background-color: #3844;
+            box-sizing: border-box;
         }
-
+ 
         .cartoon {
+            width: 60%;
+            height: 60%;
             position: absolute;
-            bottom: 10%;
+            bottom: 0%;
             left: 50%;
             transform: translate(-50%, 0);
-            width: 80vmin;
-            height: 80vmin;
         }
 
         .cartoon div {
             position: absolute;
-            box-sizing: border-box;
-        }
-
-        .cartoon {
-            --skin: #fca;
-            --skin-dark: #fb9;
-            --cap-light: #fff;
-            --cap-dark: #eee;
-            --cap-lid: #777;
-            --cap-front: #8f5158;
-            --cap-front-dark: #7f4148;
         }
 
         .ear {
-            width: 20%;
-            height: 30%;
-            border-radius: 100% / 80% 80% 120% 125%;
-            border: 0.75vmin solid;
-            border-right: 1.125vmin solid var(--skin);
-            border-left: 1.1vmin solid;
-            background: var(--skin);
-            top: 50%;
-            left: 5%;
-            transform: rotate(-12deg)
-        }
+  width: 20%;
+  height: 30%;
+  border-radius: 100% / 80% 80% 120% 125%;
+  border: 0.75vmin solid;
+  border-right: 1.125vmin solid var(--skin);
+  border-left: 1.1vmin solid;
+  background: var(--skin);
+  top: 50%;
+  left: 5%;
+  transform: rotate(-12deg);
+}
 
-        .ear::before {
-            width: 70%;
-            height: 60%;
-            border: 1.25vmin solid transparent;
-            border-top: 0.75vmin solid;
-            border-right: 0.5vmin solid;
-            border-radius: 50%;
-            top: 22%;
-            right: 15%;
-            box-shadow: inset -1.5vmin 2vmin 1vmin -0.5vmin var(--skin-dark)
-        }
-
-        .ear::after {
-            width: 30%;
-            height: 20%;
-            border: 0.75vmin solid;
-            border-bottom: 0.25vmin solid transparent;
-            border-right: 0.75vmin solid transparent;
-            border-radius: 50%;
-            right: 17%;
-            top: 55%;
-            transform: rotate(30deg);
-            box-shadow: -2vmin -1vmin 1vmin 0.5vmin var(--skin-dark);
-        }
-
-        .ear.ear-back {
-            border-left: 0.75vmin solid;
-            transform: scalex(-1) rotate(-10deg);
-            left: 52%;
-            top: 46%;
-            background-image: linear-gradient(to right, transparent, var(--skin-dark) 20%)
-        }
+.ear::before {
+  width: 70%;
+  height: 60%;
+  border: 1.25vmin solid transparent;
+  border-top: 0.75vmin solid;
+  border-right: 0.5vmin solid;
+  border-radius: 50%;
+  top: 22%;
+  right: 15%;
+  box-shadow: inset -1.5vmin 2vmin 1vmin -0.5vmin var(--skin-dark);
+}
     </style>
 </head>
 <body>
     <div class="cartoon">
-        <!-- ear -->
-        <div class="ear ear-back"></div>
-        <!-- nose -->
-        <!-- mouth -->
+        <div class="ear"></div>
     </div>
 </body>
 </html>
