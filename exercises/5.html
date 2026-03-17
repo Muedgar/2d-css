@@ -8,52 +8,37 @@
         html, body {
             margin: 0;
             padding: 0;
-            background-color: #3844;
             box-sizing: border-box;
+            background-color: #3338;
         }
- 
+
         .cartoon {
             width: 60%;
             height: 60%;
             position: absolute;
-            bottom: 0%;
             left: 50%;
             transform: translate(-50%, 0);
         }
 
-        .cartoon div {
-            position: absolute;
+        .mouth {
+            width: 30%;
+            height: 30%;
+            border: .4vmin solid;
+            border-radius: 100% / 50% 50% 120% 120%;
+            border-left: .84vmin solid transparent;
+            border-right: .84vmin solid transparent;
+            border-top: .84vmin solid transparent;
+            transform: rotate(7deg)
         }
 
-        .ear {
-  width: 20%;
-  height: 30%;
-  border-radius: 100% / 80% 80% 120% 125%;
-  border: 0.75vmin solid;
-  border-right: 1.125vmin solid var(--skin);
-  border-left: 1.1vmin solid;
-  background: var(--skin);
-  top: 50%;
-  left: 5%;
-  transform: rotate(-12deg);
-}
+        .mouth::before {
 
-.ear::before {
-  width: 70%;
-  height: 60%;
-  border: 1.25vmin solid transparent;
-  border-top: 0.75vmin solid;
-  border-right: 0.5vmin solid;
-  border-radius: 50%;
-  top: 22%;
-  right: 15%;
-  box-shadow: inset -1.5vmin 2vmin 1vmin -0.5vmin var(--skin-dark);
-}
+        }
     </style>
 </head>
 <body>
     <div class="cartoon">
-        <div class="ear"></div>
+        <div class="mouth"></div>
     </div>
 </body>
 </html>
