@@ -1,89 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
- html, body {
-  overflow: hidden;
-  background: rgba(161, 182, 202, 0.533);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #e334;
+    }
 
-.cartoon {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  width: 80vmin;
-  height: 80vmin;
-}
+    .cartoon {
+      width: 600px;
+      height: 600px;
+      border: 1vmin solid;
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      transform: translate(-50%, 0);
+    }
 
-.cartoon div {
-  position: absolute;
-  box-sizing: border-box;
-}
+    .forehead {
+      width: 80%;
+      height: 80%;
+      border: 1vmin solid;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
 
-.b {
-  border: 0.5vmin solid;
-}
+    .face {
+      width: 80%;
+      height: 80%;
+      border: 1vmin solid;
+      border-radius: 100% / 120% 120% 80% 80%;
+      border-left: .15vmin solid transparent;
+      border-top: 1vmin solid transparent;
+      position: absolute;
+      left: 20%;
+      top: 22%;
+    }
 
-.r {
-  border-radius: 100%;
-}
-
-.hb::before,
-.ha::after {
-  content: "";
-  display: block;
-  position: absolute;
-  box-sizing: border-box;
-}
-
-/****/
-.cartoon {
-  --skin: #fca;
-  --skin-dark: #fb9;
-  --cap-light: #fff; 
-  --cap-dark: #eee;
-  --cap-lid: #777;
-  --cap-front: #8f5158;
-  --cap-front-dark: #7f4148;
-}
-
-
-
-.face {
-  width: 50%;
-  height: 60%;
-  background: var(--skin);
-  background-image: radial-gradient(circle at 55% 100%, rgba(0,0,0,0.075) 44%, transparent 0);
-  border: 0.75vmin solid;
-  border-bottom: 1vmin solid;
-  border-top-color: var(--skin);
-  border-left: 0.1vmin solid var(--skin);
-  border-radius: 100% / 120% 120% 80% 80%;
-  transform: translate(-50%, 0) rotate(-15deg);
-  left: 45%;
-  top: 33%;
-}
-
-    </style>
+  </style>
 </head>
 <body>
-    <div class="cartoon hb show-cap">
-  <div class="cap cap-lid"></div>
-  <div class="ear ear-back"></div>
-  <div class="neck"></div>
-  <div class="forehead"></div>
-  <div class="face"></div>
-  <div class="eyes"></div>
-  <div class="nose"></div>
-  <div class="mouth ha"></div>
-  <div class="eyebrow"></div>
-  <div class="eyebrow"></div>
-  <div class="cap-top"></div>
-  <div class="ear ha hb"></div>
-  <div class="cap cap-line ha"></div>
+  <div class="cartoon">
+    <div class="forehead"></div>
+    <div class="face"></div>
+  </div>
 </body>
 </html>
