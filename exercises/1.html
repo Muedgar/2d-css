@@ -8,48 +8,34 @@
     html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      background-color: #e334;
+      box-sizing: 0;
     }
 
-    .cartoon {
-      width: 600px;
-      height: 600px;
-      border: 1vmin solid;
-      position: absolute;
-      left: 50%;
-      top: 15%;
-      transform: translate(-50%, 0);
-    }
-
-    .forehead {
-      width: 80%;
-      height: 80%;
-      border: 1vmin solid;
+    .eyes {
+      width: 100px;
+      height: 100px;
+      border: .3vmin solid;
       border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 0);
+      position: relative;
     }
 
-    .face {
-      width: 80%;
-      height: 80%;
-      border: 1vmin solid;
-      border-radius: 100% / 120% 120% 80% 80%;
-      border-left: .15vmin solid transparent;
-      border-top: 1vmin solid transparent;
+    .eyes::before {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: yellow;
+      content: "";
       position: absolute;
-      left: 20%;
-      top: 22%;
+      top: 0;
+      background: 
+        radial-gradient(100% 100% at 70% 70%, black 20%, white 20%) 10% 10% / 80% 80%
+      ;
+      background-repeat: no-repeat;
     }
 
   </style>
 </head>
 <body>
-  <div class="cartoon">
-    <div class="forehead"></div>
-    <div class="face"></div>
-  </div>
+  <div class="eyes"></div>
 </body>
 </html>
