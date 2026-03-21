@@ -1,160 +1,3 @@
-<!-- target mistakes invested: 100,000 -->
-<!-- 100,000 -->
-<!-- 23 [1,000] -->
-
-<!-- drawing -->
-<!-- animation -->
-<!-- story -->
-<!-- communicate technique -->
-
-<!-- 
-Drawing complex subjects is a great way to train **observation, patience, and spatial thinking**. Since you like structured challenges (like when you practice system design or Kanban engineering), you can treat drawing the same way: progressively harder problems. ✏️
-
-Here are **10 complex things to draw** that will really stretch your skills.
-
----
-
-### 1. A Human Hand in Perspective
-
-Hands are famously difficult because they combine:
-
-* **Anatomy** (bones, joints, tendons)
-* **Perspective** (fingers pointing toward the viewer)
-* **Subtle proportions**
-
-Why it's complex:
-
-* Many small shapes interacting
-* Easy to make look unnatural
-* Requires strong observation
-
----
-
-### 2. A Busy City Street
-
-This is like **drawing an entire system**.
-
-Challenges:
-
-* Linear perspective
-* Many objects (cars, buildings, signs, people)
-* Depth and scale
-
-It's similar to designing a **complex UI layout**, but with a pencil.
-
----
-
-### 3. A Mechanical Watch (Inside View)
-
-This is extremely intricate.
-
-Challenges:
-
-* Dozens of tiny gears
-* Precise mechanical shapes
-* Repeating patterns
-
-Great if you like **engineering precision**.
-
----
-
-### 4. A Human Face with Realistic Lighting
-
-Faces are difficult because humans instantly notice mistakes.
-
-Challenges:
-
-* Symmetry
-* Subtle shading
-* Expression
-
-Even a **1–2 mm mistake** can change the whole face.
-
----
-
-### 5. A Forest Scene with Many Trees
-
-Nature scenes are deceptively complex.
-
-Challenges:
-
-* Thousands of leaves
-* Depth layers
-* Random but believable structure
-
----
-
-### 6. A Glass Object with Reflections
-
-Glass is hard because you're drawing **light instead of the object**.
-
-Challenges:
-
-* Transparency
-* Distorted reflections
-* Strong highlights
-
----
-
-### 7. A Detailed Map of a City
-
-Think of this as **designing a system architecture diagram**, but artistic.
-
-Challenges:
-
-* Spatial layout
-* Street patterns
-* Hundreds of tiny details
-
----
-
-### 8. A Futuristic Sci-Fi City
-
-This mixes imagination with structure.
-
-Challenges:
-
-* Complex architecture
-* Lighting
-* Massive scale
-
----
-
-### 9. A Dragon with Scales
-
-Great for **imagination + anatomy**.
-
-Challenges:
-
-* Hundreds of scales
-* Wings structure
-* Dynamic pose
-
----
-
-### 10. A Full Construction Site
-
-You might like this one because you're building **construction management software**.
-
-Challenges:
-
-* Machinery
-* Buildings in progress
-* Workers and equipment
-* Perspective everywhere
-
----
-
-✅ **If you want**, I can also give you:
-
-* **10 drawing exercises used by Pixar artists**
-* **A 30-day drawing training plan**
-* **5 drawing problems as hard as algorithm problems (but for artists)**
-
-They’re surprisingly similar to how engineers train.
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,18 +5,408 @@ They’re surprisingly similar to how engineers train.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {
-            width: 100vw;
-            height: 100vh;
-            background: 
-                radial-gradient(white 20%, yellow 20%),
-                radial-gradient(black 50%, rgba(0, 128, 0, 0) 50%),
-                ;
-            background-repeat: no-repeat;
-        }
+        html, body {
+  --bg: #bdb;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.cartoon {
+  position: absolute;
+  bottom: 10vmin;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 80vmin;
+  height: 80vmin;
+}
+
+.cartoon div {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.b {
+  border: 0.5vmin solid;
+}
+
+.r {
+  border-radius: 100%;
+}
+
+.hb::before,
+.ha::after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/****/
+.cartoon {
+  --skin: #7c6;
+}
+
+.face {
+  width: 44%;
+  height: 60%;
+  border-radius: 100% / 50% 50% 125% 125%;
+  background: var(--skin);
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: linear-gradient(transparent 16%, var(--skin) 0)
+}
+
+.hat-bottom {
+  width: 90%;
+  height: 12%;
+  border-radius: 50%;
+  left: 5%;
+  top: 31%;
+}
+
+.hat-bottom.back {
+  border: 0.5vmin solid #222;
+  background: #1f1f1f;
+}
+
+.hat-bottom.front {
+  border-top: 0.5vmin solid #222;
+  box-shadow: 0 -1.1vmin 0 1vmin #444;
+}
+
+.eye {
+  width: 28%;
+  height: 19%;
+  background: white;
+  border-radius: 4% 100% 10% 100%;
+  transform: rotate(-30deg);
+  top: 34%;
+  left: 10%;
+  box-shadow: inset 1vmin 1.5vmin, 0.75vmin -1.25vmin 1vmin 1vmin #0803;
+}
+
+.eye + .eye {
+  transform: scaleX(-1) rotate(-30deg);
+  left: auto;
+  right: 10%;
+}
+
+.eye::before {
+  width: 1.5vmin;
+  height: 1.5vmin;
+  background: #111;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0 0 1.5vmin 0.5vmin #fff3, 0 0 0 1.5vmin green, 0 0 0 1.75vmin #262;
+}
+
+.eye::after {
+  width: 0.75vmin;
+  height: 0.75vmin;
+  background: white;
+  left: 55%;
+  top: 45%;
+  border-radius: 50%;
+  box-shadow: 0.5vmin 0.5vmin 0 -0.125vmin white;
+}
+
+.eye + .eye::after {
+  box-shadow: -0.5vmin -0.25vmin 0 -0.125vmin white;
+}
+
+.eyebrow {
+  width: 45%;
+  height: 15%;
+  top: 30%;
+  left: 0%;
+  box-shadow: 0.5vmin -1.5vmin 0 -1vmin #111;
+  transform: rotate(-5deg);
+}
+
+.eyebrow + .eyebrow {
+  left: 55%;
+  transform: scaleX(-1) rotate(-8deg);
+}
+
+.nose {
+  width: 18%;
+  height: 12%;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: inset 0 -5vmin 0 -4vmin #0a0, inset 0 -5.25vmin 0 -4vmin #080, 0 -0.5vmin var(--skin), 0 -2vmin 0 -1.25vmin #0807;
+  border: 0.5vmin solid transparent;
+  border-top: 0.25vmin solid #0807;
+}
+
+.mouth {
+  width: 37%;
+  height: 3%;
+  border: 0.25vmin solid transparent;
+  border-bottom: 0.5vmin solid #222;
+  top: 76%;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(-4deg);
+  background: green;
+}
+
+.mouth::before {
+  width: 20%;
+  height: 250%;
+  border: 0.15vmin solid transparent;
+  border-right: 0.3vmin solid;
+  border-radius: 50%;
+  right: -3%;
+  top: -20%;
+  transform: rotate(-10deg);
+}
+
+.bottom-lip {
+  width: 39%;
+  height: 18%;
+  top: 65%;
+  left: 30.5%;
+  border-radius: 50%;
+  background: linear-gradient(transparent 70%, #090 0);
+  transform: rotate(-4deg);
+}
+
+.neck {
+  width: 11%;
+  height: 16%;
+  background: var(--skin);
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-image: linear-gradient(rgba(0,0,0,0.2), transparent 50%);
+  border-radius: 100% / 0 0 20% 20%;
+}
+
+.hat-top {
+  width: 110%;
+  height: 70%;
+  border-radius: 50%;
+  background: #f007;
+  top: 19.25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: linear-gradient(#222, #333 21%, transparent 0)
+}
+
+.hat-lace {
+  width: 48%;
+  height: 7%;
+  background: purple;
+  background-image: linear-gradient(transparent, rgba(0,0,0,0.2));
+  left: 26%;
+  top: 15.75%;
+  transform: skew(2deg);
+  clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+}
+
+.hat-triangle {
+  width: 36vmin;
+  height: 60vmin;
+  box-sizing: border-box;
+  bottom: 83%;
+  left: 27.5%;
+  border-left: 15vmin solid transparent;
+  border-right: 19vmin solid transparent;
+  border-bottom: 60vmin solid #333;
+}
+
+.ear {
+  width: 10%;
+  height: 25%;
+  background: var(--skin);
+  transform: rotate(-13deg);
+  top: 42%;
+  left: 26%;
+  box-shadow: inset 0 0 0 10vmin rgba(0,0,0,0.075);
+}
+
+.ear + .ear {
+  transform: scaleX(-1) rotate(-11deg);
+  left: auto;
+  right: 26%;
+}
+
+.hair {
+  width: 150%;
+  height: 150%;
+  top: 17%;
+  left: -25%;
+  overflow: hidden;
+}
+
+.body {
+  width: 70%;
+  height: 100%;
+  background: #222;
+  top: 87.5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 100% / 40% 40% 120% 120%;
+}
+
+.broom {
+  width: 10%;
+  height: 150%;
+  background: #963;
+  border-radius: 100% / 3vmin 3vmin 0 0; 
+  transform: rotate(10deg);
+  top: 50%;
+  left: 80%;
+  overflow: hidden;
+}
+
+.broom::after {
+  width: 100%;
+  height: 2vmin;
+  background: #fff7;
+  border-radius: 50%;
+}
+
+.hair-front {
+  width: 23%;
+  height: 12%;
+  top: 14%;
+  left: 45%;
+  transform: translate(-50%,0);
+  box-shadow: inset -2.5vmin 0 #111
+}
+
+.hair-front::after {
+  width: 60%;
+  height: 80%;
+  border-radius: 50%;
+  top: 88%;
+  left: 30%;
+  box-shadow: inset -1.25vmin 0.5vmin 0 0.25vmin; , inset -1.5vmin -1vmin
+}
+
+.hair-back {
+  width: 60%;
+  height: 100%;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  overflow: hidden;
+}
+
+.hair-back::before {
+  width: 40%;
+  height: 50%;
+  background: #111;
+  border-radius: 50%;
+  top: -25%;
+  left: 5%;
+  box-shadow: 
+    24vmin 10vmin,
+    25vmin 25vmin,
+    -2vmin 39vmin, 
+    10vmin 39vmin, 
+    22.25vmin 48vmin 0vmin 3vmin;
+}
+
+.hair-back::after {
+  width: 20%;
+  height: 40%;
+  border-radius: 50%;
+  left: -12%;
+  transform: rotate(1deg);
+  box-shadow: 
+    5vmin 0 0 -3vmin, 
+    48.125vmin 8.5vmin 0 -2vmin var(--bg);
+}
+
+
+
+/***/
+
+#youtube {
+  z-index: 2;
+  display: block;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  border-radius: 50% / 11%;
+  transition: transform 0.5s;
+}
+
+#youtube:hover,
+#youtube:focus {
+  transform: scale(1.1);
+}
+
+#youtube::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5%;
+  left: -6%;
+  width: 112%;
+  height: 85%;
+  background: red;
+  border-radius: 9% / 50%;
+}
+
+#youtube::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 45px;
+  height: 30px;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-left: 30px solid white;
+}
+
+#youtube span {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
     </style>
 </head>
 <body>
-    
+    <div class="cartoon hb">
+  <div class="hat-triangle"></div>
+  <div class="hat-top"></div>
+  <div class="hat-lace"></div>
+  <div class="hat-bottom back"></div>
+  <div class="hair-back ha hb"></div>
+  <div class="body"></div>
+  <div class="neck"></div>
+  <div class="ear r"></div>
+  <div class="ear r"></div>
+  <div class="face">
+    <div class="eyebrow r"></div>
+    <div class="eyebrow r"></div>
+    <div class="eye ha hb"></div>
+    <div class="eye ha hb"></div>
+    <div class="nose r"></div>
+    <div class="bottom-lip"></div>
+    <div class="mouth r ha hb"></div>
+    <div class="hair-front r ha"></div>
+  </div>
+  <div class="hat-bottom front"></div>
+  <div class="broom ha"></div>
+</div>
+
+<a id="youtube" href="https://www.youtube.com/watch?v=cjt-EK4m3JA" target="_blank">
+  <span>See how this video was made</span>
+</a>
+
 </body>
 </html>
