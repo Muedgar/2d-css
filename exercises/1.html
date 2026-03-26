@@ -1,3 +1,13 @@
+<!--face: 100 -->
+<!--eyes: 100 -->
+<!--ears: 100 -->
+<!--hair: 100 -->
+<!--mouth: 100 -->
+<!--nose: 100 -->
+<!--eye brows: 100 -->
+<!--cap: 100  -->
+<!--nec: 100 -->
+<!--shoulders: 100 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +18,51 @@
     html, body {
       margin: 0;
       padding: 0;
+      background: #ff88;
     }
 
-    .box {
-      width: 200px;
-      height: 200px;
-      border: .4vmin solid;
-      margin: 200px auto;
-      background: yellow;
-      clip-path: polygon(10% 50%, 48.5% 50%, 50% 10%);
+    .cartoon {
+      width: 600px;
+      height: 700px;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border: 1vmin solid;
+    }
+
+    .cartoon div {
+      box-sizing: border-box;
+      position: absolute;
+    }
+
+    .forehead {
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      border: 1vmin solid;
+      left: 13%;
+      top: 5%;
+    }
+
+    .face {
+      width: 80%;
+      height: 80%;
+      border: 1vmin solid;
+      border-radius: 100% / 120% 100% 80% 80%;
+      border-bottom: 1vmin solid transparent;
+      border-left: .7vmin solid;
+      border-right: .09vmin solid transparent;
+      bottom: 0%;
+      left: 11%;
+      transform: scale(-1) rotate(10deg);
     }
   </style>
 </head>
 <body>
-  <div class="box"></div>
+  <div class="cartoon">
+    <div class="forehead"></div>
+    <div class="face"></div>
+  </div>
 </body>
 </html>
