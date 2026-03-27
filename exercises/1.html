@@ -41,6 +41,8 @@
       height: 75%;
       border-radius: 50%;
       border: 1vmin solid;
+      border-bottom: 1vmin solid transparent;
+      border-right: .0vmin solid;
       left: 13%;
       top: 5%;
     }
@@ -57,12 +59,35 @@
       left: 11%;
       transform: scale(-1) rotate(10deg);
     }
+
+    .eyes {
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
+      border: 1px solid;
+      background: 
+        radial-gradient(circle at 60% 60%, black 20%, white 10%) 10% 10% / 100% 100%
+      ; 
+      background-repeat: no-repeat;
+    }
+
+    .eye-left {
+      top: 40%;
+      left: 30%;
+    }
+
+    .eye-right {
+      top: 40%;
+      left: 60%;
+    }
   </style>
 </head>
 <body>
   <div class="cartoon">
     <div class="forehead"></div>
     <div class="face"></div>
+    <div class="eyes eye-left"></div>
+    <div class="eyes eye-right"></div>
   </div>
 </body>
 </html>
