@@ -8,23 +8,57 @@
         html, body {
             margin: 0;
             padding: 0;
-            background-color: #ffd;
+            background-color: #fea;
         }
 
-        .box {
-            width: 200px;
-            height: 200px;
-            border: .5vmin solid;
-            margin: 150px auto;
-            background: rgb(165, 125, 125);
-            box-shadow: 1vmin 1vmin 1vmin 1vmin black,
-                        -5vmin -5vmin 0vmin 0vmin yellow,
-                        -10vmin -10vmin 0vmin 0vmin blue,
-                        ;
+        .face {
+            width: 70vmin;
+            height: 85vmin;
+            border: 1vmin solid;
+            border-radius: 100% / 70% 70% 125% 125%;
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, 0);
         }
+
+        .lower-lip {
+            width: 20%;
+            height: 2.4%;
+            background: black;
+            border-radius: 85% 85% 170% 170%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 30%;
+        }
+
+        .lower-lip::before {
+            content: "";
+            position: absolute;
+            left: -5%;
+            top: 30%;
+            width: 20%;
+            height: 20%;
+            background: black;
+        }
+
+        .lower-lip::after {
+            content: "";
+            position: absolute;
+            right: -5%;
+            top: 30%;
+            width: 20%;
+            height: 20%;
+            background: black;
+        }
+
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="cartoon">
+        <div class="face"></div>
+        <div class="lower-lip"></div>
+    </div>
 </body>
 </html>
