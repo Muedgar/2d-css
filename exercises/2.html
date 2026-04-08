@@ -72,7 +72,12 @@
             position: absolute;
             bottom: 40%;
             left: 46%;
-            box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.288);
+            box-shadow: 
+                9px 0px 0px 0px #fea,
+                10px 0px 0px 0px rgba(0, 0, 0),
+                -9px 0px 0px 0px #fea,
+                -10px 0px 0px 0px rgba(0, 0, 0);
+
         }
 
         .nose::after {
@@ -97,14 +102,38 @@
             right: 7px;
         }
 
+        .eye {
+            width: 20%;
+            height: 20%;
+            border: 1vmin solid white;
+            background: 
+                radial-gradient(circle at 55% 40%, black 20%, white 20%);
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .eye.e-left {
+            left: 20%;
+            top: 25%;
+        }
+
+        .eye.e-right {
+            right: 20%;
+            top: 25%;
+        }
+
     </style>
 </head>
 <body>
     <div class="cartoon">
-        <div class="face"></div>
-        <div class="lower-lip"></div>
-        <div class="upper-lip"></div>
-        <div class="nose"></div>
+        <div class="face">
+            <div class="lower-lip"></div>
+            <div class="upper-lip"></div>
+            <div class="nose"></div>
+            <div class="eye e-left"></div>
+            <div class="eye e-right"></div>
+        </div>
     </div>
 </body>
 </html>
