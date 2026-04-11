@@ -142,6 +142,103 @@
       top: 46%;
       background-image: linear-gradient(to right, transparent, var(--skin-dark) 20%);
     }
+
+    .neck {
+      width: 30%;
+      height: 25%;
+      background: var(--skin);
+      border-left: 1vmin solid;
+      border-right: 0.75vmin solid;
+      top: 75%;
+      left: 20%;
+      background-image: radial-gradient(circle at 83% 25%, var(--skin-dark) 52%, transparent 60%);
+    }
+
+    .forehead {
+      width: 57%;
+      height: 60%;
+      background: var(--skin);
+      border: 0.75vmin solid;
+      border-radius: 50%;
+      left: 12.5%;
+      top: 13.5%;
+    }
+
+    .mouth {
+      width: 30%;
+      height: 20%;
+      border: 1.25vmin solid transparent;
+      border-bottom: 0.5vmin solid;
+      border-right: 0.5vmin solid transparent;
+      border-radius: 50%;
+      top: 56%;
+      left: 37%;
+      transform: rotate(10deg);
+    }
+
+    .mouth::after {
+      width: 20%;
+      height: 30%;
+      border: 0.25vmin solid transparent;
+      border-left: 0.75vmin solid;
+      border-radius: 50%;
+      top: 80%;
+      left: 15%;
+      transform: rotate(15deg);
+    }
+
+    .show-cap .cap {
+      width: 85%;
+      height: 30%;
+      border: 0.75vmin solid;
+      border-radius: 80% 125% 125% 80% / 100%;
+      transform: rotate(-35deg);
+      top: 25%;
+      left: 4%;
+      border-left: 1.5vmin solid transparent;
+      border-right: 1.25vmin solid transparent;
+      border-bottom: 0.125vmin solid transparent;
+    }
+
+    .show-cap .cap-lid {
+      background: black;
+      background-image: linear-gradient(45deg, transparent 0%, var(--cap-lid));
+      border-right: 1.25vmin solid;
+      border-bottom: 0.5vmin solid;
+    }
+
+    .show-cap .cap-top {
+      width: 63%;
+      height: 28%;
+      border: 0.75vmin solid;
+      border-radius: 50vmin 50vmin 0 0;
+      border-bottom: 0vmin solid transparent;
+      transform: rotate(-35deg);
+      top: 9.5%;
+      left: -4%;
+      background-image: 
+        radial-gradient(circle at 68% 80%, var(--cap-front), var(--cap-front-dark) 54%, black 0 56%, transparent 0),
+        linear-gradient(var(--cap-light), var(--cap-dark) 92%, transparent 0),
+        linear-gradient(16deg, transparent 40%, var(--cap-dark) 0),
+        linear-gradient(-17deg, transparent 39%, var(--cap-dark) 0)
+    }
+
+    .cap-line {
+      overflow: hidden;
+    }
+
+    .cap-line::after {
+      width: 66%;
+      height: 105%;
+      background: var(--cap-front);
+      border-radius: 50% 50% 0 40%;
+      border: 0.75vmin solid;
+      border-left: 1vmin solid;
+      border-right: 0.5vmin solid;
+      left: 23%;
+      top: -84%;
+      transform: rotate(-7deg) skew(-30deg);
+    }
   </style>
 </head>
 <body>
