@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            overflow: hidden;
+            background: rgba(161, 182, 202, 0.533);
+        }
+
+        .cartoon {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            width: 80vmin;
+            height: 80vmin;
+            border: 1vmin solid;
+        }
+
+        .cartoon div {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .cartoon {
+            --skin: #fca;
+            --skin-dark: #fb9;
+            --cap-light: #fff;
+            --cap-dark: #eee;
+            --cap-lid: #777;
+            --cap-front: #8f5158;
+            --cap-front-dark: #7f4148;
+        }
+
+        .face {
+            width: 50%;
+            height: 60%;
+            background: var(--skin);
+            background-image: radial-gradient(circle at 55% 100%, rgba(0,0,0,0.075) 44%, transparent 0);
+            border: 0.75vmin solid;
+            border-bottom: 1vmin solid;
+            border-top-color: var(--skin);
+            border-left: 0.1vmin solid var(--skin);
+            border-radius: 100% / 120% 120% 80% 80%;
+            transform: translate(-50%, 0) rotate(-15deg);
+            left: 45%;
+            top: 33%;
+        }
+
+        .forehead {
+            width: 57%;
+            height: 60%;
+            background: var(--skin);
+            border: 0.75vmin solid;
+            border-radius: 50%;
+            left: 12.5%;
+            top: 13.5%;
+        }
+
+        .eyes {
+            width: 60%;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image:
+                linear-gradient(transparent 30%, var(--skin) 0 40%, black 0 41.5%, transparent 0),
+                radial-gradient(circle at 43.5% 50%, black 5%, transparent 0),
+                radial-gradient(circle at 75% 50%, black 4%, transparent 0),
+                radial-gradient(circle at 35% 50%, white 20%, black 0 21.5%, transparent 0),
+                radial-gradient(circle at 65% 50%, white 20%, black 0 21.5%, transparent 0);
+            background-position: center center;
+            background-size: 61% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="cartoon">
+        <div class="forehead"></div>
+        <div class="face"></div>
+        <div class="eyes"></div>
+    </div>
+</body>
+</html>
