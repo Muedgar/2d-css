@@ -60,18 +60,58 @@
             top: 13.5%;
         }
 
-        .nose {
-            width: 15%;
-            height: 10%;
+        .hb::before,
+        .ha::after {
+            content: "";
+            display: block;
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .ear {
+            width: 20%;
+            height: 30%;
+            border-radius: 100% / 80% 80% 120% 125%;
+            border: 0.75vmin solid;
+            border-right: 1.125vmin solid var(--skin);
+            border-left: 1.1vmin solid;
             background: var(--skin);
-            background-image: linear-gradient(to right, transparent, var(--skin-dark));
-            border: 0.66vmin solid;
-            border-right: 0.75vmin solid;
-            border-left: 0.5vmin solid var(--skin);
-            border-radius: 120% 80% 90% 100% / 100%;
-            top: 53%;
-            left: 48%;
-            transform: rotate(-15deg);
+            top: 50%;
+            left: 5%;
+            transform: rotate(-12deg);
+        }
+
+        .ear::before {
+            width: 70%;
+            height: 60%;
+            border: 1.25vmin solid transparent;
+            border-top: 0.75vmin solid;
+            border-right: 0.5vmin solid;
+            border-radius: 50%;
+            top: 22%;
+            right: 15%;
+            box-shadow: inset -1.5vmin 2vmin 1vmin -0.5vmin var(--skin-dark);
+        }
+
+        .ear::after {
+            width: 30%;
+            height: 20%;
+            border: 0.75vmin solid;
+            border-bottom: 0.25vmin solid transparent;
+            border-right: 0.75vmin solid transparent;
+            border-radius: 50%;
+            right: 17%;
+            top: 55%;
+            transform: rotate(30deg);
+            box-shadow: -2vmin -1vmin 1vmin 0.5vmin var(--skin-dark);
+        }
+
+        .ear.ear-back {
+            border-left: 0.75vmin solid;
+            transform: scaleX(-1) rotate(-10deg);
+            left: 52%;
+            top: 46%;
+            background-image: linear-gradient(to right, transparent, var(--skin-dark) 20%);
         }
     </style>
 </head>
@@ -79,7 +119,8 @@
     <div class="cartoon">
         <div class="forehead"></div>
         <div class="face"></div>
-        <div class="nose"></div>
+        <div class="ear ear-back"></div>
+        <div class="ear ha hb"></div>
     </div>
 </body>
 </html>

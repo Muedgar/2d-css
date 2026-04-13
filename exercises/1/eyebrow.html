@@ -60,18 +60,21 @@
             top: 13.5%;
         }
 
-        .nose {
-            width: 15%;
-            height: 10%;
-            background: var(--skin);
-            background-image: linear-gradient(to right, transparent, var(--skin-dark));
-            border: 0.66vmin solid;
-            border-right: 0.75vmin solid;
-            border-left: 0.5vmin solid var(--skin);
-            border-radius: 120% 80% 90% 100% / 100%;
-            top: 53%;
-            left: 48%;
+        .eyebrow {
+            width: 25%;
+            height: 25%;
+            border-radius: 100% / 50%;
+            box-shadow: 1vmin -4vmin 0 -1.75vmin;
             transform: rotate(-15deg);
+            top: 38.5%;
+            left: 27%;
+        }
+
+        .eyebrow + .eyebrow {
+            transform: scaleX(-1) rotate(-12deg);
+            left: 48.5%;
+            top: 38%;
+            width: 23%;
         }
     </style>
 </head>
@@ -79,7 +82,8 @@
     <div class="cartoon">
         <div class="forehead"></div>
         <div class="face"></div>
-        <div class="nose"></div>
+        <div class="eyebrow"></div>
+        <div class="eyebrow"></div>
     </div>
 </body>
 </html>

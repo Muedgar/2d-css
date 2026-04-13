@@ -60,18 +60,34 @@
             top: 13.5%;
         }
 
-        .nose {
-            width: 15%;
-            height: 10%;
-            background: var(--skin);
-            background-image: linear-gradient(to right, transparent, var(--skin-dark));
-            border: 0.66vmin solid;
-            border-right: 0.75vmin solid;
-            border-left: 0.5vmin solid var(--skin);
-            border-radius: 120% 80% 90% 100% / 100%;
-            top: 53%;
-            left: 48%;
-            transform: rotate(-15deg);
+        .ha::after {
+            content: "";
+            display: block;
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .mouth {
+            width: 30%;
+            height: 20%;
+            border: 1.25vmin solid transparent;
+            border-bottom: 0.5vmin solid;
+            border-right: 0.5vmin solid transparent;
+            border-radius: 50%;
+            top: 56%;
+            left: 37%;
+            transform: rotate(10deg);
+        }
+
+        .mouth::after {
+            width: 20%;
+            height: 30%;
+            border: 0.25vmin solid transparent;
+            border-left: 0.75vmin solid;
+            border-radius: 50%;
+            top: 80%;
+            left: 15%;
+            transform: rotate(15deg);
         }
     </style>
 </head>
@@ -79,7 +95,7 @@
     <div class="cartoon">
         <div class="forehead"></div>
         <div class="face"></div>
-        <div class="nose"></div>
+        <div class="mouth ha"></div>
     </div>
 </body>
 </html>
