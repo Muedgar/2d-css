@@ -79,6 +79,39 @@
             border-right: 1.25vmin solid;
             border-bottom: 0.5vmin solid;
         }
+
+        .show-cap .cap-top {
+            width: 63%;
+            height: 28%;
+            border: 0.75vmin solid;
+            border-radius: 50vmin 50vmin 0 0;
+            border-bottom: 0vmin solid transparent;
+            transform: rotate(-35deg);
+            top: 9.5%;
+            left: -4%;
+            background-image:
+                radial-gradient(circle at 68% 80%, var(--cap-front), var(--cap-front-dark) 54%, black 0 56%, transparent 0),
+                linear-gradient(var(--cap-light), var(--cap-dark) 92%, transparent 0),
+                linear-gradient(16deg, transparent 40%, var(--cap-dark) 0),
+                linear-gradient(-17deg, transparent 39%, var(--cap-dark) 0);
+        }
+
+        .cap-line {
+            overflow: hidden;
+        }
+
+        .cap-line::after {
+            width: 66%;
+            height: 105%;
+            background: var(--cap-front);
+            border-radius: 50% 50% 0 40%;
+            border: 0.75vmin solid;
+            border-left: 1vmin solid;
+            border-right: 0.5vmin solid;
+            left: 23%;
+            top: -84%;
+            transform: rotate(-7deg) skew(-30deg);
+        }
     </style>
 </head>
 <body>
