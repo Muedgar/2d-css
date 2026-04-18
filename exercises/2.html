@@ -6,134 +6,108 @@
     <title>Document</title>
     <style>
         html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #fea;
+            overflow: hidden;
+            background: #7c66;
         }
 
-        .face {
-            width: 70vmin;
-            height: 85vmin;
-            border: 1vmin solid;
-            border-radius: 100% / 70% 70% 125% 125%;
+        .cartoon {
             position: absolute;
-            left: 50%;
-            bottom: 10%;
-            transform: translate(-50%, 0);
-        }
-
-        .lower-lip {
-            width: 20%;
-            height: 2.4%;
-            background: black;
-            border-radius: 85% 85% 170% 170%;
-            position: absolute;
+            bottom: 0%;
             left: 50%;
             transform: translate(-50%, 0);
-            bottom: 30%;
+            width: 80vmin;
+            height: 80vmin;
         }
 
-        .lower-lip::before {
+        .cartoon div {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .b {
+            border: 0.5vmin solid;
+        }
+
+        .r {
+            border-radius: 100%;
+        }
+
+        .hb::before,
+        .ha::after {
             content: "";
+            display: block;
             position: absolute;
-            left: -5%;
-            top: 30%;
-            width: 20%;
-            height: 20%;
-            background: black;
+            box-sizing: border-box;
         }
 
-        .lower-lip::after {
-            content: "";
-            position: absolute;
-            right: -5%;
-            top: 30%;
-            width: 20%;
-            height: 20%;
-            background: black;
+        .cartoon {
+            --skin: #7c6;
+            --line: #222;
+            --eye: #ffa;
+            --tooth: #ff9;
+            --mouth: #0002;
+            --iris: #369c;
+            --tongue: #f00a;
+            color: var(--line);
         }
 
-        .upper-lip {
-            width: 10%;
-            height: .3%;
-            background: #fea;
-            position: absolute;
-            border-radius: 100% / 90% 90% 90% 90%;
-            bottom: 31%;
-            left: 45%;
-        }
-
-        .nose {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: rgba(255, 139, 57, 0.916);
-            background-repeat: no-repeat;
-            position: absolute;
-            bottom: 40%;
-            left: 46%;
-            box-shadow: 
-                9px 0px 0px 0px #fea,
-                10px 0px 0px 0px rgba(0, 0, 0),
-                -9px 0px 0px 0px #fea,
-                -10px 0px 0px 0px rgba(0, 0, 0);
-
-        }
-
-        .nose::after {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            width: 6px;
-            height: 6px;
-            background-color: black;
-            border-radius: 50%;
-            left: 7px;
-        }
-
-        .nose::before {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            width: 6px;
-            height: 6px;
-            background-color: black;
-            border-radius: 50%;
-            right: 7px;
+        .body {
+            width: 60%;
+            height: 70%;
+            background: var(--skin);
+            border-radius: 100% / 120% 120% 65% 60%;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            overflow: hidden;
         }
 
         .eye {
-            width: 20%;
-            height: 20%;
-            border: 1vmin solid white;
-            background: 
-                radial-gradient(circle at 55% 40%, black 20%, white 20%);
-            background-repeat: no-repeat;
+            width: 55%;
+            height: 46%;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            box-shadow: 0 0 0 2vmin var(--skin), -2vmin -2vmin 0 -0.5vmin, 2vmin -2vmin 0 -0.5vmin;
+            background: var(--eye);
+            box-shadow: inset 0 0 4vmin -2.5vmin var(--tongue);
+        }
+
+        .eye::before {
+            width: 12vmin;
+            height: 12vmin;
+            background: var(--line);
             border-radius: 50%;
-            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 2vmin var(--iris);
         }
 
-        .eye.e-left {
-            left: 20%;
+        .eye::after {
+            width: 3vmin;
+            height: 3vmin;
+            background: #fff;
+            border-radius: 50%;
             top: 25%;
+            left: 60%;
+            box-shadow: 2vmin 2vmin 0 -0.75vmin #fff, 2.5vmin 0.5vmin 0 -1.1vmin #fff;
         }
-
-        .eye.e-right {
-            right: 20%;
-            top: 25%;
-        }
-
     </style>
 </head>
 <body>
-    <div class="cartoon">
-        <div class="face">
-            <div class="lower-lip"></div>
-            <div class="upper-lip"></div>
-            <div class="nose"></div>
-            <div class="eye e-left"></div>
-            <div class="eye e-right"></div>
+    <div class="cartoon hb">
+        <div class="horn r ha"></div>
+        <div class="horn r ha"></div>
+        <div class="leg hb ha"></div>
+        <div class="leg hb ha"></div>
+        <div class="body b">
+            <div class="tongue b"></div>
+            <div class="fang b ha"></div>
+            <div class="mouth r ha hb"></div>
+            <div class="eye b r ha hb"></div>
         </div>
+        <div class="correction ha r"></div>
     </div>
 </body>
 </html>
