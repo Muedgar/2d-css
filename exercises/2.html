@@ -93,6 +93,51 @@
             left: 60%;
             box-shadow: 2vmin 2vmin 0 -0.75vmin #fff, 2.5vmin 0.5vmin 0 -1.1vmin #fff;
         }
+
+        .mouth {
+            width: 80%;
+            height: 70%;
+            top: 23%;
+            left: 55%;
+            transform: translate(-50%, 0) rotate(33deg);
+            border: 0.5vmin solid transparent;
+            border-right: 0.25vmin solid transparent;
+            border-bottom:  0.5vmin solid;
+            box-shadow:  0 0 0 5vmin var(--skin), inset -3vmin 8vmin var(--skin), inset 35vmin -4vmin var(--mouth);
+        }
+
+        .mouth::before {
+            width: 120%;
+            height: 130%;
+            background: var(--skin);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            border: 0.5vmin solid transparent;
+            border-bottom: 0.5vmin solid;
+            border-right: 0.3vmin solid transparent;
+            top: -39%;
+            left: -34%;
+        }
+
+        .mouth::after {
+            width: 5vmin;
+            height: 5vmin;
+            border: 0.5vmin solid transparent;
+            border-left: 0.5vmin solid;
+            border-radius: 50%;
+            top: 82.5%;
+            left: 13.5%;
+            transform: rotate(20deg);
+        }
+
+        .fang {
+            width: 10%;
+            height: 9%;
+            background: var(--tooth);
+            top: 72.5%;
+            left: 56%;
+            transform: rotate(45deg) skew(10deg);
+        }
     </style>
 </head>
 <body>
