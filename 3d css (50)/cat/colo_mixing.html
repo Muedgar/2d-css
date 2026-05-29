@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Mix Demo</title>
+
+<style>
+:root {
+  --base-color: #0baadc;
+}
+
+body {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.color-demo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+}
+
+/* rectangular-color-space: srgb, srgb-linear, display-p3, a98-rgb, prophoto-rgb, rec2020, lab, oklab, xyz, xyz-d50, and xyz-d65
+polar-color-space: hsl, hwb, lch, and oklch */
+
+.color-1 {
+  background-color: color-mix(in oklch, var(--base-color), black 70%);
+}
+
+.color-2 {
+  background-color: color-mix(in oklch, var(--base-color), black 50%);
+}
+
+.color-3 {
+  background-color: color-mix(in oklch, var(--base-color), black 25%);
+}
+
+.color-4 {
+  background-color: color-mix(in oklch, var(--base-color), white 10%);
+}
+
+.color-5 {
+  background-color: color-mix(in oklch, var(--base-color), white 30%);
+}
+
+/* middle set */
+.color-6 {
+  background-color: color-mix(in srgb, green, black 70%);
+}
+
+.color-7 {
+  background-color: color-mix(in srgb, green, black 50%);
+}
+
+.color-8 {
+  background-color: color-mix(in srgb, green, black 25%);
+}
+
+.color-9 {
+  background-color: color-mix(in srgb, green, white 10%);
+}
+
+.color-10 {
+  background-color: color-mix(in srgb, green, white 30%);
+}
+
+/* last set */
+.color-11 {
+  background-color: color-mix(in oklch, blue, black 70%);
+}
+
+.color-12 {
+  background-color: color-mix(in oklch, blue, black 50%);
+}
+
+.color-13 {
+  background-color: color-mix(in oklch, blue, black 25%);
+}
+
+.color-14 {
+  background-color: color-mix(in oklch, blue, white 10%);
+}
+
+.color-15 {
+  background-color: color-mix(in oklch, blue, white 30%);
+}
+</style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="color-demo color-1"></div>
+    <div class="color-demo color-2"></div>
+    <div class="color-demo color-3"></div>
+    <div class="color-demo color-4"></div>
+    <div class="color-demo color-5"></div>
+  </div>
+  <div class="row">
+    <div class="color-demo color-6"></div>
+    <div class="color-demo color-7"></div>
+    <div class="color-demo color-8"></div>
+    <div class="color-demo color-9"></div>
+    <div class="color-demo color-10"></div>
+  </div>
+  <div class="row">
+    <div class="color-demo color-11"></div>
+    <div class="color-demo color-12"></div>
+    <div class="color-demo color-13"></div>
+    <div class="color-demo color-14"></div>
+    <div class="color-demo color-15"></div>
+  </div>
+</body>
+</html>

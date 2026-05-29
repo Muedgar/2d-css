@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #111;
+}
+
+.scene {
+  perspective: 800px;
+}
+
+.cat-head {
+  width: 320px;
+  height: 360px;
+  background: #0baadc;
+  clip-path: polygon(
+    15% 0,
+    38% 22%,
+    50% 15%,
+    62% 22%,
+    85% 0,
+    100% 40%,
+    75% 100%,
+    25% 100%,
+    0 40%
+  );
+  transform: rotateX(65deg);
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
+</style>
+</head>
+<body>
+    <div class="scene">
+  <div class="cat-head"></div>
+</div>
+
+
+</body>
+</html>

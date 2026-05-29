@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  .cat-head {
+    position: absolute;
+    top: 5vh; 
+    left: 50vw;
+    width: 414px; 
+    height: 702px;
+    background: red;
+    transform: translateX(-50%) rotateX(70deg);
+  }
+  
+  .main-body {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    background: green;
+    width: 100%; 
+    height: 100%;
+  }
+  
+.main-body::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+
+clip-path: polygon(
+
+  /* top zigzag */
+  0% 0%,
+  10% 10%,
+  20% 0%,
+  30% 10%,
+  40% 0%,
+  50% 10%,
+  60% 0%,
+  70% 10%,
+  80% 0%,
+
+  /* top-right corner triangle */
+  100% 15%,
+
+  /* right zigzag */
+  90% 25%,
+  100% 35%,
+  90% 45%,
+  100% 55%,
+  90% 65%,
+  100% 75%,
+  90% 85%,
+  100% 100%,
+
+  /* bottom */
+  0% 100%
+);
+}
+  /* .ear {
+    position: absolute;
+    left: 137px; 
+    top: 100%;
+    width: 140px; 
+    height: 111px;
+  }
+  
+  .ear::before {
+    content: '';
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    background-color: #1c1c1c;
+    clip-path: polygon(0% 0%, 100% 0%, 64% 100%);
+  } */
+</style>
+</head>
+<body>
+<div class="cat-head">
+  <div class="main-body"></div>
+  <div class="ear"></div>
+</div>
+</body>
+</html>

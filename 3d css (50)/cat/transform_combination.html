@@ -1,0 +1,27 @@
+<style>
+  .combo {
+    position: absolute;
+    width: 100px; height: 100px;
+    transform-style: preserve-3d;
+  }
+  
+  .combo::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: #0baadc;
+  }
+  
+  /* Rotation around Z (flat) */
+  .rotate-z { transform: rotateZ(45deg); }
+  
+  /* Rotation around X (tilt forward/back) */
+  .rotate-x { transform: rotateX(45deg); }
+  
+  /* Rotation around Y (tilt side to side) */
+  .rotate-y { transform: rotateY(45deg); }
+  
+  /* Multiple rotations - order matters! */
+  .rotate-xy { transform: rotateX(45deg) rotateY(45deg); }
+  .rotate-all { transform: rotateZ(30deg) rotateX(60deg) rotateY(45deg); }
+</style>

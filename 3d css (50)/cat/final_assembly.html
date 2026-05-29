@@ -1,0 +1,34 @@
+<style>
+  /* Pattern: cat-X for main parts, cat-X-Y for sub-parts */
+  .cat-part {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  
+  /* Example pattern for ear (cat-1) */
+  .cat-1 {
+    left: 137px; top: 100%;
+    width: 140px; height: 111px;
+  }
+  
+  .cat-1-1 {
+    left: 90px; top: 100%;
+    width: 146px; height: 145px;
+    transform: rotateZ(141deg) rotateY(-86.92deg);
+  }
+  
+  .cat-1-1-1 {
+    left: 133px;
+    width: 119px; height: 145px;
+    transform: rotateZ(-5deg) rotateY(-88.9deg);
+  }
+  
+  /* Always use ::before for the actual shape */
+  .cat-1::before,
+  .cat-1-1::before,
+  .cat-1-1-1::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+  }
+</style>

@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .scene {
+    background-color: antiquewhite;
+    transform-style: preserve-3d;
+  }
+  
+  .scene * {
+    position: absolute;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+  }
+  
+  .cat {
+    top: 65vh; left: 50vw;
+    width: 414px; height: 702px;
+    transform-origin: center;
+    transform: translateX(-50%) rotateX(75deg);
+    animation: rotate 10s linear infinite;
+  }
+  
+  @keyframes rotate {
+    50% { transform: translateX(-50%) rotateX(75deg) rotateZ(-180deg); }
+    100% { transform: translateX(-50%) rotateX(75deg) rotateZ(-360deg); }
+  }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="cat"></div>
+</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform-origin: center;
+      perspective: 1000px;
+      animation: rotate 5s infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateY(0)
+      }
+
+      to {
+        transform: rotateY(360deg)
+      }
+    }
+    .scene {
+      width: 100%;
+      height: 100%;
+      /* background-color: rgb(176, 144, 144); */
+      transform-style: preserve-3d;
+      transform-origin: center;
+      perspective: 1000px;
+      position: absolute;
+    }
+
+    .scene * {
+      position:absolute;
+    }
+
+      .bottom { 
+    width: 100px; 
+    height: 100px;
+    background: yellow;
+    transform-origin: center;
+    transform: translateX(180%) translateY(100%) rotateX(70deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  .top { 
+    width: 100px; 
+    height: 100px;
+    background: green;
+    transform-origin: center;
+    transform: translateX(180%) translateY(0%) rotateX(70deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+    .left { 
+    width: 100px; 
+    height: 100px;
+    background: red;
+    transform-origin: center;
+    transform: translateX(130%) translateY(50%) rotateX(70deg) rotateY(90deg) rotateZ(0deg);
+  }
+  .right { 
+    width: 100px; 
+    height: 100px;
+    background: black;
+    transform-origin: center;
+    transform: translateX(230%) translateY(50%) rotateX(70deg) rotateY(90deg) rotateZ(0deg);
+  }
+
+  .front {
+    width: 100px; 
+    height: 100px;
+    background: black;
+    transform-origin: center;
+    transform: translateX(180%) translateY(50%) rotateX(0deg) rotateY(0) rotateZ(90deg);
+  }
+
+  .back {
+    width: 100px; 
+    height: 100px;
+    background: black;
+    transform-origin: center;
+    transform: translateX(180%) translateY(50%) rotateX(0deg) rotateY(0) rotateZ(90deg);
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="scene">
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="top"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+  </div>
+  </div>
+</body>
+</html>

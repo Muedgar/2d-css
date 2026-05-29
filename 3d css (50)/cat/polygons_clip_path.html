@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .shape {
+    position: absolute;
+    width: 400px; height: 400px;
+  }
+  
+  .shape::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: #0baadc;
+  }
+  
+  /* Pentagon - Top head shape */
+  .pentagon::before {
+    clip-path: polygon(137px 0, 50% 47px, calc(100% - 137px) 0, calc(100% - 86px) 70px, 86px 70px);
+  }
+  
+  /* Triangle */
+  .triangle::before {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+</style>
+<body>
+<div class="shape pentagon"></div>
+</body>
+</html>

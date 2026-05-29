@@ -1,0 +1,47 @@
+<style>
+  .lightsource {
+    --side: 30px;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: calc(var(--side) * 1.62);
+    height: calc(var(--side) * 1.54);
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotateX(20deg);
+  }
+  
+  .lightsource::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: #806300;
+    clip-path: polygon(0% 38%, 50% 0%, 100% 38%, 81% 100%, 19% 100%);
+  }
+  
+  .lightsource::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 150%; height: 150%;
+    background-color: #ffe680;
+    filter: blur(30px);
+    transform: translate(-50%, -50%);
+  }
+  
+  .facet {
+    position: absolute;
+    width: var(--side);
+    height: calc((sqrt(3) / 2) * var(--side));
+    transform: rotateZ(60deg) rotateX(-41.8deg);
+  }
+  
+  .facet::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: #ffc600;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+</style>
+<div class="lightsource">
+  <div class="facet"></div>
+</div>
