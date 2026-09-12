@@ -5,46 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html, body {
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        :root {
-            --skin: #da0;
-        }
-
-        .cartoon {
-            width: 500px;
-            height: 500px;
-            background-color: var(--skin);
-            border: 1vmin solid #d9a4;
-            border-radius: 100% / 80% 80% 120% 120%;
+        .face {
             position: absolute;
-            left: 50%;
-            bottom: 30%;
-            transform: translateX(-50%);
+            top: 10%;
+            width: 500px;
+            height: 550px;
+            border: 1vmin solid black;
+            border-radius: 100% / 80% 80% 120% 120%;
+            background-color: antiquewhite;
         }
 
-        .cartoon::after {
+        .hair {
+            position: absolute;
+            top: -4%;
+            left: -5%;
+            width: 110%;
+            height: 200px;
+            background-color: brown;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+        }
+
+        .eye {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(20% 20% at 50% 50%, black 100%, white 0%) 0% 0% / 100% 100%;
+            border-radius: 50%;
+        }
+
+        .eye.left {
+            top: 40%;
+            left: 15%;
+        }
+
+        .eye.right {
+            top: 40%;
+            right: 15%;
+        }
+
+        .nose {
+            position: absolute;
+            left: 47%;
+            top: 45%;
+            width: 20px;
+            height: 110px;
+            background: black;
+            border: .5vmin solid;
+            border-top: 0 transparent;
+            border-bottom: 0 transparent;
+        }
+
+        .nose::before {
             content: "";
             position: absolute;
-            top: 30%;
-            width: 90%;
-            height: 100%;
-            background-color: var(--skin);
-            border: 1vmin solid;
-            border-top: 0vmin solid;
-            border-right: 0vmin solid;
-            border-radius: 100% / 120% 120% 80% 80%;
-            transform: rotate(-45deg);
+            left: -100%;
+            bottom: -5%;
+            width: 40px;
+            height: 40px;
+            background: black;
+            border: .5vmin solid;
+            border-radius: 50%;
+            border-top: 0 transparent;
+            border-bottom: 0 transparent;
+            border-right: 0 transparent;
+        }
+
+        .nose::after {
+            content: "";
+            position: absolute;
+            right: -100%;
+            bottom: -5%;
+            width: 40px;
+            height: 40px;
+            background: black;
+            border: .5vmin solid;
+            border-radius: 50%;
+            border-top: 0 transparent;
+            border-bottom: 0 transparent;
+            border-right: 0 transparent;
+        }
+
+        .ear {
+            position: absolute;
+        }
+
+        .ear.left {
+            top: 38%;
+            left: -6%;
+            background: transparent;
+            border-left: 1vmin solid black;
+            width: 100px;
+            height: 200px;
+            border-radius: 100% / 80% 80% 120% 120%;
+            transform: rotate(-10deg);
+        }
+
+        .ear.right {
+            top: 38%;
+            right: -6%;
+            background: transparent;
+            border-right: 1vmin solid black;
+            width: 100px;
+            height: 200px;
+            border-radius: 100% / 80% 80% 120% 120%;
+            transform: rotate(10deg);
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 18%;
+            left: 30%;
+            width: 200px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .mouth::before {
+            content: "";
+            position: absolute;
+            left: 15%;
+            top: 40%;
+            width: 70%;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .neck {
+            position: absolute;
+            bottom: -20%;
+            left: 35%;
+            z-index: -1;
+            width: 160px;
+            height: 250px;
+            background-color: antiquewhite;
+        }
+
+        .shoulders {
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 600px;
+            height: 200px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            background-color: antiquewhite;
         }
     </style>
 </head>
 <body>
-    <div class="cartoon">
-        
+    <div class="face">
+        <div class="hair"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="mouth"></div>
+        <div class="neck"></div>
+        <div class="shoulders"></div>
     </div>
 </body>
 </html>
