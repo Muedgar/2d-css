@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            transform-style: preserve-3d;
+            perspective: 80em;
+            position: absolute;
+            margin: 30px;
+        }
+
+        .face {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            position: absolute;
+            transform: rotateX(80deg) translateY(200px);
+        }
+
+        .one {
+            position: absolute;
+            background-color: red;
+            transform: rotateX(0deg) rotateY(80deg) rotateZ(0) translateZ(50px) translateY(0)
+        }
+
+        .two {
+            position: absolute;
+            background-color: blue;
+            transform: rotateX(0deg) rotateY(80deg) rotateZ(0) translateZ(-50px) translateY(0)
+        }
+
+        .three {
+            position: absolute;
+            background-color: red;
+            transform: rotateX(0deg) rotateY(80deg) rotateZ(0) translateZ(50px) translateY(0)
+        }
+
+        .four {
+            position: absolute;
+            background-color: yellow;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0) translateZ(-100px) translateY(0) 
+        }
+
+        .five {
+            position: absolute;
+            background-color: aqua;
+            transform: rotateX(86deg) rotateY(0deg) rotateZ(0) translateZ(50px) translateY(0);
+        }
+
+        .six {
+            position: absolute;
+            background-color: rgb(255, 0, 60);
+            transform: rotateX(86deg) rotateY(0deg) rotateZ(0) translateZ(-50px) translateY(0);
+        }
+</style>
+</head>
+<body>
+    <!-- box 1 -->
+    <div class="box">
+        <div class="face one"></div>
+        <div class="face two"></div>
+        <div class="face three"></div>
+        <div class="face four"></div>
+        <div class="face five"></div>
+        <div class="face six"></div>
+    </div>
+</body>
+</html>
