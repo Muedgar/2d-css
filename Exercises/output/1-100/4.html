@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(100% 50% at 50% 50%, rgba(0, 0, 0, 0.13) 40%, rgba(255, 255, 255, 0.201) 100%) 0% 0% / 100% 100%;
+            transform-style: preserve-3d;
+            perspective: 80em;
+        }
+
+        .box-1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            transform-origin:right;
+            transform: rotateY(90deg) scale(2.2) rotateX(0deg) translateX(100px) translateY(100px);
+        }
+
+        .box-2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            transform-origin: bottom;
+            transform: rotateY(90deg) scale(2.2) rotateX(0deg) translateX(100px) translateY(100px) translateZ(200px);
+        }
+
+        .box-3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            transform-origin: top;
+            transform: rotateY(90deg) scale(2.2) rotateX(50deg) translateX(0px) translateY(130px) translateZ(0px);
+        }
+
+        .box-4 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            transform-origin:bottom;
+            transform: rotateY(-90deg) scale(2.2) rotateX(0deg) translateX(100px) translateY(100px);
+        }
+
+        .box-5 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            transform-origin:right;
+            transform: rotateY(90deg) scale(2.2) rotateX(0deg) translateX(100px) translateY(100px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1 -->
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+        <div class="box-4"></div>
+        <div class="box-5"></div>
+    </div>
+</body>
+</html>
