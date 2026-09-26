@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.079) 10%, rgba(255, 255, 0, 0.362) 100%) 0% 0% / 100% 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .face {
+            top: 10px;
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 100% / 80% 80% 120% 120%;
+            background-color: bisque;
+        }
+
+        .face::before {
+            content: "";
+            position: absolute;
+            top: 120px;
+            border-radius: 100% / 120% 120% 80% 80%;
+            width: 100%;
+            height: 100%;
+            background-color: bisque;
+            transform: rotateZ(-60deg)
+        }
+
+        .eyes {
+            position: absolute;
+            top: 40%;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(50% 50% at 60% 50%, black 30%, white 30%) 0% 0% / 100% 100%;
+        }
+        
+        .left {
+            left: 10%;
+        }
+
+        .right {
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="face">
+            <div class="eyes left"></div>
+            <div class="eyes right"></div>
+        </div>
+    </div>
+</body>
+</html>
