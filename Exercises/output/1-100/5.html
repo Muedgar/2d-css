@@ -55,6 +55,27 @@
         .right {
             right: 10%;
         }
+
+        .mouth {
+            position: absolute;
+            bottom: -50px;
+            left: 32%;
+            width: 200px;
+            height: 50px;
+            background: black;
+            border-radius: 100% / 120% 120% 80% 80%;
+        }
+
+        .mouth::before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 30%;
+            width: 70px;
+            height: 10px;
+            background-color: bisque;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 50% 50%);
+        }
     </style>
 </head>
 <body>
@@ -62,6 +83,7 @@
         <div class="face">
             <div class="eyes left"></div>
             <div class="eyes right"></div>
+            <div class="mouth"></div>
         </div>
     </div>
 </body>
