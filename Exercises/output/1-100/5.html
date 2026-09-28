@@ -76,6 +76,36 @@
             background-color: bisque;
             clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 50% 50%);
         }
+
+        .mouth::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 25%;
+            width: 100px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .ears {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            background: bisque;
+            border-radius: 100% /80% 80% 120% 120%;
+        }
+
+        .left-ear {
+            top: 50%;
+            left: -12.5%;
+        }
+
+        .right-ear {
+            top: 50%;
+            right: -12.5%;
+        }
     </style>
 </head>
 <body>
@@ -84,6 +114,8 @@
             <div class="eyes left"></div>
             <div class="eyes right"></div>
             <div class="mouth"></div>
+            <div class="ears left-ear"></div>
+            <div class="ears right-ear"></div>
         </div>
     </div>
 </body>
