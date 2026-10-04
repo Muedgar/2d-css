@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(33, 208, 91);
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            width: 800px;
+            height: 800px;
+            background-color: rgba(144, 105, 105, 0.267);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .faces {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            width: 100px;
+            height: 100px;
+            background: black;
+            transform: rotateX(80deg);
+        }
+
+        .one {
+            background: transparent;
+        }
+
+        .two {
+            background-color: red;
+            transform: rotateX(0deg) rotateY(90deg);
+        }
+
+        .three {
+            background: green;
+            top: 56%;
+            left: 26%;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+        }
+
+        .four {
+            background: yellow;
+            transform: rotateX(0) rotateY(180deg);
+        }
+
+        .five {
+            background: brown;
+        }
+
+        .six {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="faces one"></div>
+            <div class="faces two"></div>
+            <div class="faces three"></div>
+            <div class="faces four"></div>
+            <div class="faces five"></div>
+            <div class="faces six"></div>
+    </div>
+</body>
+</html>
