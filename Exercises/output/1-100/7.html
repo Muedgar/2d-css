@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: lightblue;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .face {
+            position: absolute;
+            top: 100px;
+            width: 500px;
+            height: 500px;
+            background: rgb(245, 237, 160);
+            border-radius: 100% / 80% 80% 120% 120%;
+        }
+
+        .face::before {
+            content: "";
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            width: 500px;
+            height: 500px;
+            background: rgb(245, 237, 160);
+            border-radius: 100% / 120% 120% 80% 80%;
+            transform: rotate(-40deg);
+        }
+
+       .hair {
+    position: absolute;
+    inset: 0;
+}
+
+.strand {
+    position: absolute;
+
+    width: 90px;
+    height: 300px;
+
+    border-left: 7px solid #111;
+
+    /* this is what makes the "line" curve */
+    border-radius: 50%;
+
+    transform-origin: top center;
+}
+
+/* left side */
+.s1 {
+    left: 115px;
+    top: 15px;
+    transform: rotate(42deg);
+}
+
+.s2 {
+    left: 145px;
+    top: 5px;
+    transform: rotate(34deg);
+}
+
+.s3 {
+    left: 180px;
+    top: -5px;
+    transform: rotate(25deg);
+}
+
+.s4 {
+    left: 215px;
+    top: -10px;
+    transform: rotate(16deg);
+}
+
+/* center */
+.s5 {
+    left: 245px;
+    top: -15px;
+    transform: rotate(7deg);
+}
+
+.s6 {
+    left: 265px;
+    top: -15px;
+    transform: rotate(-4deg);
+}
+
+.s7 {
+    left: 285px;
+    top: -10px;
+    transform: rotate(-12deg);
+}
+
+/* right */
+.s8 {
+    left: 315px;
+    top: -5px;
+    transform: rotate(-20deg);
+}
+
+.s9 {
+    left: 345px;
+    top: 5px;
+    transform: rotate(-28deg);
+}
+
+.s10 {
+    left: 375px;
+    top: 15px;
+    transform: rotate(-36deg);
+}
+
+.s11 {
+    left: 400px;
+    top: 30px;
+    transform: rotate(-43deg);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="face">
+            <div class="hair">
+  <i class="strand s1"></i>
+  <i class="strand s2"></i>
+  <i class="strand s3"></i>
+  <i class="strand s4"></i>
+  <i class="strand s5"></i>
+  <i class="strand s6"></i>
+  <i class="strand s7"></i>
+  <i class="strand s8"></i>
+  <i class="strand s9"></i>
+  <i class="strand s10"></i>
+  <i class="strand s11"></i>
+</div>
+        </div>
+    </div>
+</body>
+</html>
