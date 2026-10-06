@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background:greenyellow;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: black;
+            animation: bounce 3s infinite ease-in-out;
+        }
+
+        .box::after {
+            content: " ";
+            position: absolute;
+            bottom: 10px;
+            left: 90px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(97, 97, 97);
+            animation: bounce 3s infinite ease-in-out;
+        }
+
+        .line {
+            position: absolute;
+            top: 95%;
+            width: 100vw;
+            height: 1px;
+            background-color: black;
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 0%
+            }
+
+            50% {
+                top: 50%;
+            }
+
+            60% {
+                top: 80%;
+            }
+
+            70% {
+                top: 40%;
+            }
+
+            80% {
+                top: 30%
+            }
+
+            100% {
+                top: 0%;
+            }
+
+            110% {
+                top: 0%;
+                left: 20%;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box"></div>
+    <div class="line"></div>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: antiquewhite;
+            position: absolute;
+            top: 0;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.05) 40%, rgba(255, 255, 0, 0.211) 30%);
+        }
+
+        .one {
+            animation: boxOne infinite 4s ease-in-out;
+        }
+
+        .two {
+            animation: boxTwo infinite 6s ease-in-out;
+        }
+
+        @keyframes boxOne {
+            0% {
+                top: 0%;
+                left: 0%;
+            }
+
+            25% {
+                top: 25%;
+                left: 55%;
+            }
+
+            50% {
+                top: 50%;
+                left: 0%;
+            }
+
+            75% {
+                top: 75%;
+                left: 55%;
+            }
+
+            100% {
+                top: 100%;
+                left: 0%;
+            }
+        }
+
+        @keyframes boxTwo {
+            0% {
+                top: 0%;
+                right: 0%;
+            }
+
+            25% {
+                top: 25%;
+                right: 55%;
+            }
+
+            50% {
+                top: 50%;
+                right: 0%;
+            }
+
+            75% {
+                top: 75%;
+                right: 55%;
+            }
+
+            100% {
+                top: 100%;
+                right: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box one"></div>
+        <div class="box two"></div>
+    </div>
+</body>
+</html>
