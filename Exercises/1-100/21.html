@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::before, *::after {
+            padding: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(#024, #200 50%);
+            min-height: 100vmin;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            perspective: 80em;
+            overflow: hidden;
+        }
+
+        body *:not(:empty) {
+            transform-style: preserve-3d;
+        }
+
+        .scene {
+            position: relative;
+            
+        }
+
+        .ferriswheel {
+            position: absolute;
+        }
+
+        .stand .side {
+            transform: rotateY(var(--ry, 0)) translateZ(6em);
+        }
+
+        .stand .side:nth-child(2) {
+            --ry: 180deg;
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="ferriswheel">
+            <div class="stand">
+                <div class="side">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="side">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="base">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="sideShadow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="cartShadow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+
+            <div class="wing">
+                <div class="structure">
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <div class="side">
+                        <i></i><i></i><i></i>
+                    </div>
+                    <i></i>
+                    <div class="structure_center"></div>
+                </div>
+
+                <div class="cart">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="cart_pole"></div>
+                    <div class="cart_bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
