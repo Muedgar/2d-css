@@ -17,21 +17,111 @@
             background: rgb(255, 201, 255);
             display: grid;
             place-items: center;
+            z-index: 0;
         }
 
         .face {
+            position: absolute;
             width: 400px;
             height: 500px;
             border-radius: 100% / 80% 80% 125% 125%;
             border: .2vmin solid;
             box-shadow: 0px 0px, -2px 2px, 2px -2px, 1px 1px black;
+            background: rgb(241, 226, 113);
+            z-index: 10;
+        }
+
+        .nose {
+            position: absolute;
+            bottom: 180px;
+            left: 45%;
+            width: 40px;
+            height: 40px;
+            background: pink;
+            border-radius: 50%;
+            box-shadow: inset 0px 0px 1px 1px black;
+        }
+
+        .nose::before {
+            content: "";
+            position: absolute;
+            left: -10.5px;
+            top: 2px;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            border: .4vmin solid;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+
+        .nose::after {
+            content: "";
+            position: absolute;
+            right: -10.5px;
+            top: 2px;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            border: .4vmin solid;
+            border-top: 0;
+            border-left: 0;
+            border-bottom: 0;
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 100px;
+            left: 32.5%;
+            width: 140px;
+            height: 30px;
+            background: black;
+            border-radius: 100% / 30% 30% 120% 120%;
+        }
+
+        .mouth::before {
+            content: "";
+            position: absolute;
+            left: 25%;
+            bottom: 20px;
+            width: 70px;
+            height: 10px;
+            background: rgb(241, 226, 113);
+            clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 0% 0%);
+        }
+
+        .mouth::after {
+            content: "";
+            position: absolute;
+            left: 25%;
+            bottom: 12.5px;
+            width: 70px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .ears {
+            position: absolute;
+            top: 30%;
+            left: -50px;
+            width: 200px;
+            height: 250px;
+            background: rgba(0, 0, 0, 0.711);
+            border-radius: 100% / 80% 80% 120% 120%;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="face">
-            
+            <!-- nose -->
+            <div class="nose"></div>
+            <!-- mouth -->
+            <div class="mouth"></div>
+            <!-- ears -->
+            <div class="ears"></div>
         </div>
     </div>
 </body>

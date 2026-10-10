@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
+            background: burlywood;
+        }
+
+        .eyes {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            border: 1vmin solid;
+            border-radius: 100% / 200% 500% 200% 100%;
+            background: radial-gradient(50% 50% at 80% 40%, black 20%, white 20%) 0% 0% / 100% 100%;
+        }
+
+        .left {
+            top: 40%;
+            left: 20%;
+        }
+
+        .right {
+            top: 40%;
+            right: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- the eyes -->
+    <div class="eyes left"></div>
+    <div class="eyes right"></div>
+</body>
+</html>

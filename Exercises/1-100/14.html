@@ -1,0 +1,46 @@
+<!-- the nose -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: burlywood;
+            display: grid;
+            place-items: center;
+        }
+
+        .nose {
+            position: absolute;
+            top: 30%;
+            width: 80px;
+            height: 200px;
+            background: black;
+            clip-path: polygon(0% 0%, 85% 95%, 0% 100%);
+            border-radius: 50px;
+            transform: rotate(20deg);
+        }
+
+        .nose::before {
+            content: "";
+            position: absolute;
+            top: 85%;
+            left: 40%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: rgb(221, 171, 8);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nose"></div>
+</body>
+</html>
