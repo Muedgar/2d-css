@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
+            background: burlywood;
+        }
+
+        .paragraph {
+            position: absolute;
+            top: 35%;
+        }
+
+        .paragraph p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 4em;
+            font-weight: bolder;
+        }
+
+        .paragraph p span:nth-child(1) {
+            background: 
+             radial-gradient(20% 20% at 21% 20%, black 50%, rgba(255, 255, 255, 0) 50%) 0 0 / 100% 100%,
+             radial-gradient(20% 20% at 79% 20%, black 50%, white 50%) 0 0 / 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="paragraph">
+        <p>
+            <span>H</span>
+            <span>E</span>
+            <span>L</span>
+            <span>L</span>
+            <span>O</span>
+            <span></span>
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>L</span>
+            <span>D</span>
+            <span>.</span>
+        </p>
+    </div>
+</body>
+</html>

@@ -6,9 +6,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style></style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            perspective: 90em;
+            display: grid;
+            place-items: center;
+        }
+
+        .side {
+            position: absolute;
+            top: 300px;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            transform-origin: top;
+            animation: rotate 10s infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateX(10deg) rotateY(30deg) rotateZ(30deg);
+            }
+
+            100% {
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="side"></div>
 </body>
 </html>
