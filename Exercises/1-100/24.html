@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: rgb(167, 255, 196);
+            display: grid;
+            place-items: center;
+        }
+
+        .face {
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            border: .2vmin solid;
+            border-radius: 100% / 70% 70% 140% 140%;
+            background-color: rgb(167, 255, 196);
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 100px;
+            left: 25%;
+            width: 200px;
+            height: 30px;
+            background: black;
+            border-radius: 100% / 10px 10px 120% 120%;
+        }
+
+        .mouth::before {
+            content: "";
+            width: 100px;
+            height: 10px;
+            background: rgb(167, 255, 196);
+            position: absolute;
+            left: 25%;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 50%, 0% 0%);
+        }
+
+        .mouth::after {
+            content: "";
+            width: 100px;
+            height: 2px;
+            background: rgb(167, 255, 196);
+            border-radius: 50%;
+            position: absolute;
+            left: 25%;
+            top: 50%;
+        }
+
+        .nose {
+            position: absolute;
+            top:57%;
+            left: 46%;
+            width: 30px;
+            height: 30px;
+            border: .2vmin solid;
+            border-radius: 100%;
+            box-shadow: inset 0px 0px 1px 1px black;
+        }
+
+        .nose::before {
+            content: "";
+            position: absolute;
+            right: 20%;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background: black;
+            box-shadow: -1px -1px black;
+            transform: rotate(-50deg);
+        }
+
+        .nose::after {
+            content: "";
+            position: absolute;
+            left: 20%;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background: black;
+            box-shadow: 1px 1px black;
+            transform: rotate(-50deg);
+        }
+
+        .ears {
+            position: absolute;
+            top: 40%;
+            width: 100px;
+            height: 150px;
+            background-color: rgb(167, 255, 196);
+            border-radius: 100% / 80% 80% 120% 120%;
+        }
+
+        .left {
+            border-left: 1vmin solid;
+            left: -10%;
+            transform: rotate(-10deg);
+        }
+
+        .right {
+            border-right: 1vmin solid;
+            right: -10%;
+            transform: rotate(10deg);
+        }
+
+        .eyes {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            border: .1vmin solid black;
+            background: radial-gradient(20% 20% at 80% 70%, black 60%, white 10%) 0 0 / 100% 100%;
+        }
+
+        .eyes.left {
+            top: 30%;
+            left: 10%;
+        }
+
+        .eyes.right {
+            top: 30%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="face">
+            <div class="mouth"></div>
+            <div class="nose"></div>
+            <div class="ears right"></div>
+            <div class="ears left"></div>
+            <div class="hair"></div>
+            <div class="eyes left"></div>
+            <div class="eyes right"></div>
+            <div class="eyebrows"></div>
+            <div class="neck"></div>
+            <div class="shoulders"></div>
+        </div>
+    </div>
+</body>
+</html>
