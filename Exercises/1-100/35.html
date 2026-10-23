@@ -1,18 +1,4 @@
 <!-- 
-Draw a circle inside another circle.
-Draw three overlapping circles.
-Draw a semicircle.
-Draw a quarter circle.
-Draw a triangle using CSS borders.
-Draw an equilateral triangle using clip-path.
-Draw a diamond.
-Draw a parallelogram.
-Draw a trapezoid.
-Draw a regular hexagon.
-Draw a five-pointed star.
-Draw a crescent moon.
-Draw a simple heart.
-
 Draw a cartoon eye with iris and pupil.
 Draw a pair of eyes.
 Draw eyebrows with different expressions.
@@ -153,6 +139,73 @@ Create an original illustrated scene containing at least 50 individually styled 
             border-top: .5vmin solid;
             border-bottom: .5vmin solid;
         }
+
+        .circle-inside {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: .54vmin solid;
+            background: radial-gradient(100% 100% at 50% 50%, black 40%, yellow 10%) 0 0 / 100% 100%;
+        }
+
+        .three-circle-overlapping-circles {
+            width: 100px;
+            height: 100px;
+            border: 1vmin solid;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .three-circle-overlapping-circles::before {
+            content: "";
+            width: 100px;
+            height: 100px;
+            border: 1vmin solid;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+        }
+
+        .three-circle-overlapping-circles::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            border: 1vmin solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }
+
+        .semicircle {
+            width: 100px;
+            height: 100px;
+            background: black;
+            border-radius: 50%;
+            clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+            transform: rotate(180deg);
+        }
+
+        .quarter-circle {
+            width: 100px;
+            height: 100px;
+            background: black;
+            border-radius: 50%;
+            clip-path: polygon(0% 50%, 50% 50%, 50% 100%, 0% 100%);
+            transform: rotate(90deg);
+        }
+
+        .triangle {
+            width: 100px;
+            height: 100px;
+            background: black;
+            border-radius: 100% 0 0 0 / 100% 0 0 0;
+            border-left: 10px solid yellow;
+        }
+
+        .equilateral-triangle {
+            
+        }
     </style>
 </head>
 <body>
@@ -176,5 +229,25 @@ Create an original illustrated scene containing at least 50 individually styled 
 
     <!-- Draw a hollow circle using borders. -->
     <div class="hollow-circle"></div>
+
+    <!-- Draw a circle inside another circle. -->
+    <div class="circle-inside"></div>
+    <!-- Draw three overlapping circles. -->
+    <div class="three-circle-overlapping-circles"></div>
+    <!-- Draw a semicircle. -->
+     <div class="semicircle"></div>
+    <!-- Draw a quarter circle. -->
+     <div class="quarter-circle"></div>
+    <!-- Draw a triangle using CSS borders. -->
+     <div class="triangle"></div>
+    <!-- Draw an equilateral triangle using clip-path. -->
+     <div class="equilateral-triangle"></div>
+    <!-- Draw a diamond. -->
+    <!-- Draw a parallelogram. -->
+    <!-- Draw a trapezoid. -->
+    <!-- Draw a regular hexagon. -->
+    <!-- Draw a five-pointed star. -->
+    <!-- Draw a crescent moon. -->
+    <!-- Draw a simple heart. -->
 </body>
 </html>
