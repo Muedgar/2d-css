@@ -1,89 +1,3 @@
-<!-- 
-Draw a cartoon eye with iris and pupil.
-Draw a pair of eyes.
-Draw eyebrows with different expressions.
-Draw a smiling mouth.
-Draw a frowning mouth.
-Draw an open mouth with teeth.
-Draw a cartoon nose.
-Draw a human ear.
-Draw a face using only circles and ellipses.
-Draw a surprised face.
-Draw an angry face.
-Draw a laughing emoji.
-Draw a sad emoji with tears.
-Draw a sun with rays.
-Draw a cloud using overlapping shapes.
-Draw a rainbow using concentric arcs.
-Draw a flower with eight petals.
-Draw a tree with trunk and foliage.
-Draw a mushroom with a curved cap.
-Draw a butterfly with symmetrical wings.
-
-Draw a cartoon cat's face.
-Draw a dog's face with floppy ears.
-Draw a rabbit with long ears.
-Draw a panda's face.
-Draw an owl.
-Draw a fish with fins and scales.
-Draw a turtle.
-Draw a penguin.
-Draw a bird sitting on a branch.
-Draw a bee with striped body and wings.
-Draw a human head with hair.
-Draw a cartoon character with a neck and shoulders.
-Draw a full-body stick character with rounded limbs.
-Draw a character wearing a hat.
-Draw a character with glasses and a beard.
-Draw a realistic-looking eyeball using gradients.
-Draw a mouth with lips and teeth.
-Draw curly hair using repeated CSS shapes.
-Draw a cartoon hand with five fingers.
-Draw a pair of shoes with laces.
-
-Draw a wooden chair.
-Draw a desk with drawers.
-Draw a table lamp with a glowing shade.
-Draw a wristwatch with numbers and hands.
-Draw a smartphone with a screen and camera.
-Draw a laptop with keyboard and trackpad.
-Draw a coffee cup with handle and foam.
-Draw a glass of water with transparency.
-Draw a sliced watermelon.
-Draw a pizza with different toppings.
-Draw a bicycle from the side.
-Draw a cartoon car with wheels and windows.
-Draw a bus with doors and passengers.
-Draw a rocket with flames.
-Draw a small house with windows and chimney.
-Draw a city skyline with different buildings.
-Draw a mountain landscape with clouds.
-Draw a beach with sea, sand, and palm trees.
-Draw a forest scene with layered trees.
-Draw a nighttime sky with moon, stars, and silhouettes.
-
-Recreate a detailed cartoon portrait from a reference image.
-Draw a complete human face with shading and facial features.
-Draw a full-body cartoon superhero.
-Draw a medieval knight with armor and shield.
-Draw a robot with mechanical joints.
-Draw a dragon with wings, horns, and scales.
-Draw a lion with a detailed mane.
-Draw a horse in a standing pose.
-Draw a human hand holding an object.
-Draw a character riding a bicycle.
-Create a detailed living room illustration.
-Create a bedroom with furniture and decorations.
-Create a restaurant interior with tables and chairs.
-Create a classroom with desks, board, and windows.
-Create a street scene with buildings, vehicles, and pedestrians.
-Create a detailed castle with towers and walls.
-Create a tropical island scene.
-Recreate a complex cartoon movie poster.
-Create a complete comic-book panel with characters and scenery.
-Create an original illustrated scene containing at least 50 individually styled visual elements.
-
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -204,6 +118,63 @@ Create an original illustrated scene containing at least 50 individually styled 
         }
 
         .equilateral-triangle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: green;
+            z-index: 20;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
+        }
+
+        .diamond {
+            position: absolute;
+            top: 200px;
+            right: 30px;
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform-style: preserve-3d;
+            perspective: 80em;
+            transform: scaleY(1.4) rotateZ(45deg);
+        }
+
+        .parallelogram {
+            position: absolute;
+            top: 400px;
+            right: 30px;
+            width: 140px;
+            height: 100px;
+            background: black;
+            transform-style: preserve-3d;
+            perspective: 80em;
+            transform: skewX(3);
+        }
+
+        .trapezoid {
+            position: absolute;
+            top: 550px;
+            right: 30px;
+            width: 200px;
+            height: 80px;
+            background: blue;
+            clip-path: polygon(0% 100%, 10% 0%, 90% 0, 100% 100%, 0% 100%);
+        }
+
+        .hexagon {
+
+        }
+
+        .five-star {
+
+        }
+
+        .crescent-moon {
+
+        }
+
+        .simple-heart {
             
         }
     </style>
@@ -243,11 +214,19 @@ Create an original illustrated scene containing at least 50 individually styled 
     <!-- Draw an equilateral triangle using clip-path. -->
      <div class="equilateral-triangle"></div>
     <!-- Draw a diamond. -->
+     <div class="diamond"></div>
     <!-- Draw a parallelogram. -->
+     <div class="parallelogram"></div>
     <!-- Draw a trapezoid. -->
+     <div class="trapezoid"></div>
     <!-- Draw a regular hexagon. -->
+     <div class="hexagon"></div>
     <!-- Draw a five-pointed star. -->
+     <div class="five-star"></div>
     <!-- Draw a crescent moon. -->
+     <div class="crescent-moon"></div>
     <!-- Draw a simple heart. -->
+     <div class="simple-heart"></div>
+
 </body>
 </html>
