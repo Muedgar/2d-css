@@ -4,27 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(239, 160, 255);
+        }
+
+        .box {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            
+        }
+
+        .box:nth-child(1) {
+            animation: bounce 200ms infinite ease-out;
+        }
+
+        .box:nth-child(2) {
+            left: 50px;
+            animation: bounce 300ms infinite ease-out;
+        }
+
+        .box:nth-child(3) {
+            left: 100px;
+            animation: bounce 400ms infinite ease-out;
+        }
+
+        .box:nth-child(4) {
+            left: 150px;
+            animation: bounce 500ms infinite ease-out;
+        }
+
+        .box:nth-child(5) {
+            left: 200px;
+            animation: bounce 600ms infinite ease-out;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(100px);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Recreate a detailed cartoon portrait from a reference image. -->
-<!-- Draw a complete human face with shading and facial features. -->
-<!-- Draw a full-body cartoon superhero. -->
-<!-- Draw a medieval knight with armor and shield. -->
-<!-- Draw a robot with mechanical joints. -->
-<!-- Draw a dragon with wings, horns, and scales. -->
-<!-- Draw a lion with a detailed mane. -->
-<!-- Draw a horse in a standing pose. -->
-<!-- Draw a human hand holding an object. -->
-<!-- Draw a character riding a bicycle. -->
-<!-- Create a detailed living room illustration. -->
-<!-- Create a bedroom with furniture and decorations. -->
-<!-- Create a restaurant interior with tables and chairs. -->
-<!-- Create a classroom with desks, board, and windows. -->
-<!-- Create a street scene with buildings, vehicles, and pedestrians. -->
-<!-- Create a detailed castle with towers and walls. -->
-<!-- Create a tropical island scene. -->
-<!-- Recreate a complex cartoon movie poster. -->
-<!-- Create a complete comic-book panel with characters and scenery. -->
-<!-- Create an original illustrated scene containing at least 50 individually styled visual elements. -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
 </body>
 </html>

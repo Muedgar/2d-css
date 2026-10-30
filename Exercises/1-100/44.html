@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(211, 165, 255);
+            display: grid;
+            place-items: center;
+        }
+
+        .shoe {
+            position: absolute;
+            top: 10%;
+            width: 100px;
+            height: 100px;
+            background: #3334;
+            transform-style: preserve-3d;
+            perspective: 80em;
+        }
+
+        .shoe-shape-1 {
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            height: 10px;
+            background: black; 
+        }
+
+        .shoe-shape-2 {
+            position: absolute;
+            bottom: 3px;
+            left: 25px;
+            width: 10px;
+            height: 10px;
+            background: black; 
+            transform: rotateZ(-45deg)
+        }
+
+        .shoe-shape-3 {
+            position: absolute;
+            bottom: 5px;
+            left: 30px;
+            width: 40px;
+            height: 10px;
+            background: black; 
+        }
+
+        .shoe-shape-4 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 10px;
+            background: black; 
+        }
+
+        .shoe-shape-5 {
+            position: absolute;
+            bottom: 3px;
+            right: 25px;
+            width: 10px;
+            height: 10px;
+            background: black; 
+            transform: rotateZ(-45deg)
+        }
+
+        .shoe-front {
+            position: absolute;
+            bottom: 0;
+            left: -1px;
+            width: 40px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .shoe-neck {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            background: black;
+            right: 0;
+            bottom: 0;
+        }
+
+        .shoe-body {
+            position: absolute;
+            bottom: 10px;
+            left: 35px;
+            width: 35px;
+            height: 10px;
+            background: black;
+            clip-path: polygon(0% 0%, 15% 15%, 85% 15%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="shoe">
+        <div class="shoe-front"></div>
+        <div class="shoe-shape-1"></div>
+        <div class="shoe-shape-2"></div>
+        <div class="shoe-shape-3"></div>
+        <div class="shoe-shape-4"></div>
+        <div class="shoe-shape-5"></div>
+        <div class="shoe-body"></div>
+        <div class="shoe-neck"></div>
+    </div>
+</body>
+</html>

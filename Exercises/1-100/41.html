@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(151, 255, 200);
+        }
+
+        .scene {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #0003;
+            transform-style: preserve-3d;
+            perspective: 90em;
+        }
+
+        .face {
+            width: 200px;
+            height: 200px;
+            background: black;
+            animation: view 800ms infinite ease-in-out;
+        }
+
+        @keyframes view {
+            0% {
+                transform: rotateZ(0) rotateY(0);
+            }
+
+            50% {
+                transform: rotateZ(20deg) rotateY(80deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="face"></div>
+    </div>
+</body>
+</html>

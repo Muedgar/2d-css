@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(255, 249, 171);
+            display: grid;
+            place-items: center;
+        }
+
+        .rectangle {
+            position: absolute;
+            top: 10%;
+            width: 350px;
+            height: 100px;
+            border: 1vmin solid;
+        }
+
+        .ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: black;
+            animation: move 2s ease-in-out infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            10% {
+                transform: translateX(100%) translateY(100%);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Draw a cartoon cat's face. -->
-<!-- Draw a dog's face with floppy ears. -->
-<!-- Draw a rabbit with long ears. -->
-<!-- Draw a panda's face. -->
-<!-- Draw an owl. -->
-<!-- Draw a fish with fins and scales. -->
-<!-- Draw a turtle. -->
-<!-- Draw a penguin. -->
-<!-- Draw a bird sitting on a branch. -->
-<!-- Draw a bee with striped body and wings. -->
-<!-- Draw a human head with hair. -->
-<!-- Draw a cartoon character with a neck and shoulders. -->
-<!-- Draw a full-body stick character with rounded limbs. -->
-<!-- Draw a character wearing a hat. -->
-<!-- Draw a character with glasses and a beard. -->
-<!-- Draw a realistic-looking eyeball using gradients. -->
-<!-- Draw a mouth with lips and teeth. -->
-<!-- Draw curly hair using repeated CSS shapes. -->
-<!-- Draw a cartoon hand with five fingers. -->
-<!-- Draw a pair of shoes with laces. -->
+    <div class="rectangle">
+        <div class="ball"></div>
+    </div>
 </body>
 </html>

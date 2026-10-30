@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(205, 152, 255);
+            display: grid;
+            place-items: center;
+        }
+
+        .mouth {
+            position: absolute;
+            top: 10%;
+            width: 200px;
+            height: 30px;
+            background: black;
+            border-radius: 500% 300% 300% 300% / 400% 300% 300% 300%;
+        }
+
+        .inner-mouth {
+            position: absolute;
+            left: 10%;
+            top: 15%;
+            width: 160px;
+            height: 20px;
+            background: #333;
+            overflow: hidden;
+            border-radius: 500% 300% 300% 300% / 400% 300% 300% 300%;
+        }
+
+        .teeth {
+            position: absolute;
+            top: 0px;
+            width: 5px;
+            height: 5px;
+            background: white;
+        }
+
+        .teeth:nth-child(1) {
+            left: 40px;
+        }
+
+        .teeth:nth-child(2) {
+            left: 50px;
+        }
+
+        .teeth:nth-child(3) {
+            left: 60px;
+        }
+
+        .teeth:nth-child(4) {
+            left: 70px;
+        }
+
+        .teeth:nth-child(5) {
+            left: 80px;
+        }
+
+        .teeth:nth-child(6) {
+            left: 90px;
+        }
+
+        .teeth:nth-child(7) {
+            left: 100px;
+        }
+
+        .teeth:nth-child(8) {
+            left: 110px;
+        }
+
+        .teeth:nth-child(9) {
+            left: 120px;
+        }
+
+        .teeth:nth-child(10) {
+            left: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mouth">
+        <div class="inner-mouth">
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+            <div class="teeth"></div>
+        </div>
+    </div>
+</body>
+</html>

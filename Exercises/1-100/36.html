@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(137, 255, 216);
+            display: grid;
+            place-items: center;
+        }
+
+        .eye {
+            position: absolute;
+            top: 30%;
+            width: 200px;
+            height: 100px;
+            border-radius: 120% 120% 120% 120% / 90% 120% 120% 100%;
+            background: radial-gradient(50px 50px at 70% 50%, black 20%, gray 20% 50%, white 50%) 0 0 / 100% 100%;
+        }
+
+        .eye.left {
+            left: 50%;
+        }
+
+        .eye.right {
+            left: 70%;
+        }
+    </style>
 </head>
 <body>
     <!-- Draw a cartoon eye with iris and pupil. -->
+     <div class="eye left"></div>
     <!-- Draw a pair of eyes. -->
+     <div class="eye right"></div>
     <!-- Draw eyebrows with different expressions. -->
+     <div class="eyebrows"></div>
     <!-- Draw a smiling mouth. -->
     <!-- Draw a frowning mouth. -->
     <!-- Draw an open mouth with teeth. -->
