@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
+            background: rgb(129, 129, 155);
+        }
+
+        .face {
+            position: absolute;
+            top: 10%;
+            width: 300px;
+            height: 300px;
+            border-radius: 100% / 80% 80% 120% 120%;
+            background: #38a;
+        }
+
+        .ears {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background: #38a;
+            border-radius: 100% / 80% 80% 120% 120%;
+        }
+
+        .ears.left {
+            top: 80px;
+            left: -50px;
+            transform: rotate(-20deg);
+        }
+
+        .ears.right {
+            top: 80px;
+            right: -50px;
+            transform: rotate(20deg);
+        }
+
+        .neck {
+            position: absolute;
+            bottom: -90px;
+            left: 110px;
+            width: 90px;
+            height: 100px;
+            background: #38a;
+        }
+
+        .shoulders {
+            position: absolute;
+            bottom: -130px;
+            width: 300px;
+            height: 70px;
+            background-color: #38a;
+            border-radius: 130% 130% 0 0 / 130% 130% 0 0;
+        }
+
+        .nose {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 70px;
+            background-color: yellowgreen;
+            clip-path: polygon(0% 0%, 100% 80%, 90% 90%, 0% 90%, 0% 0%);
+        }
+
+        .eyes {
+            position: absolute;
+            top: 110px;
+            width: 70px;
+            height: 40px;
+            background: radial-gradient(100% 100% at 70% 50%, black 10%, white 10%) 0 0 / 100% 100%;
+            border-radius: 50%;
+        }
+
+        .eyes.left {
+            left: 50px;
+        }
+
+        .eyes.right {
+            right: 50px;
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 40px;
+            left: 35%;
+            width: 100px;
+            height: 10px;
+            background: red;
+            border-radius: 100% 129% 120% 120% / 100% 129% 120% 120%;
+        }
+
+        .cap {
+            position: absolute;
+            top: -20px;
+            width: 300px;
+            height: 100px;
+            background: black;
+            border-radius: 100px 100px 10px 10px / 100px 100px 10px 10px;
+        }
+
+        .cap::before {
+            content: "";
+            position: absolute;
+            top: -25px;
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="eyes left"></div>
+        <div class="eyes right"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="ears left"></div>
+        <div class="ears right"></div>
+        <div class="neck"></div>
+        <div class="shoulders"></div>
+        <div class="cap"></div>
+    </div>
+</body>
+</html>

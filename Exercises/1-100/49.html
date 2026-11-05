@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(171, 237, 255);
+            display: grid;
+            place-items: center;
+        }
+
+        .face {
+            position: absolute;
+            top: 100px;
+            width: 300px;
+            height: 300px;
+            background: papayawhip;
+            border-radius: 100% / 80% 80% 120% 120%;
+        }
+        
+        .ears {
+            position: absolute;
+            top: 100px;
+            width: 80px;
+            height: 100px;
+            border-radius: 100% / 80% 80% 120% 120%;
+            background: papayawhip;
+        }
+
+        .ears.left {
+            left: -50px;
+            transform: rotate(-30deg);
+            border-left: .2vmin solid;
+        }
+
+        .ears.right {
+            right: -50px;
+            transform: rotate(30deg);
+            border-right: .2vmin solid;
+        }
+
+        .eyes {
+            width: 100px;
+            height: 50px;
+            border-radius: 130% 120% 100% 120% / 130% 120% 100% 120%;
+            background: radial-gradient(100% 100% at 70% 50%, black 20%, white 20%) 0 0 / 100% 100%;
+        }
+
+        .eyes.left {
+            position: absolute;
+            top: 40%;
+            left: 10%;
+        }
+
+        .eyes.right {
+            position: absolute;
+            top: 40%;
+            right: 10%;
+        }
+
+        .nose {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            width: 20px;
+            height: 70px;
+            background: rgb(253, 227, 80);
+            clip-path: polygon(0% 0%, 100% 80%, 90% 90%, 0% 90%, 0% 0%);
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 35px;
+            left: 40%;
+            width: 80px;
+            height: 10px;
+            border-radius: 50%;
+            border-bottom: 1vmin solid;
+        }
+
+        .neck {
+            position: absolute;
+            top: 95%;
+            left: 40%;
+            width: 80px;
+            height: 50px;
+            background: papayawhip;
+        }
+
+        .shoulders {
+            position: absolute;
+            top: 110%;
+            width: 300px;
+            height: 200px;
+            background: papayawhip;
+            border-radius: 120% 120% 0 0 / 120% 120% 0 0;
+        }
+
+        .cap {
+            position: absolute;
+            top: -10px;
+            width: 300px;
+            height: 100px;
+            background: brown;
+            border-radius: 120% 120% 0 0 / 120% 120% 0 0;
+        }
+
+        .cap::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="ears left"></div>
+        <div class="ears right"></div>
+        <div class="eyes left"></div>
+        <div class="eyes right"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="neck"></div>
+        <div class="shoulders"></div>
+        <div class="cap"></div>
+    </div>
+</body>
+</html>

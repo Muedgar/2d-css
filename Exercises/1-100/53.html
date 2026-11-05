@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(200, 200, 255);
+            display: grid;
+            place-items: center;
+        }
+
+        .loading-container {
+            position: absolute;
+            top: 40%;
+            width: fit-content;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .dot {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    margin: 1px;
+
+    animation: jump 600ms ease-in-out infinite alternate;
+}
+
+.one {
+    animation-delay: 0ms;
+}
+
+.two {
+    animation-delay: 100ms;
+}
+
+.three {
+    animation-delay: 200ms;
+}
+
+.four {
+    animation-delay: 300ms;
+}
+
+.five {
+    animation-delay: 400ms;
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="dot one"></div>
+        <div class="dot two"></div>
+        <div class="dot three"></div>
+        <div class="dot four"></div>
+        <div class="dot five"></div>
+    </div>
+</body>
+</html>

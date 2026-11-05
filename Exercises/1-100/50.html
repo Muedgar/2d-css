@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background: rgb(157, 157, 227);
+        }
+
+        .scene {
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+            perspective: 80em;
+            display: grid;
+            place-items: center;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+
+        .one {
+            animation: oneAnimation 3s ease-in-out infinite alternate;
+        }
+
+        .two {
+            animation: twoAnimation 3s ease-in-out infinite alternate;
+        }
+
+        .three {
+            animation: threeAnimation 3s ease-in-out infinite alternate;
+        }
+
+        .four {
+            animation: fourAnimation 3s ease-in-out infinite alternate;
+        }
+
+        .five {
+            animation: fiveAnimation 3s ease-in-out infinite alternate;
+        }
+
+        .six {
+            animation: sixAnimation 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes oneAnimation {
+            from {
+                transform: translate(0, 0)
+                        rotateX(0deg)
+                        rotateY(0deg)
+                        scale(0);
+            }
+
+            to {
+                transform: translate(-300px, -200px)
+                        rotateX(30deg)
+                        rotateY(40deg)
+                        scale(1.1);
+            }
+        }
+
+        @keyframes twoAnimation {
+            from {
+                transform: translate(0, 0)
+                            rotateX(0deg)
+                            rotateY(0deg)
+                            scale(0);
+                background: yellow;
+            }
+
+            to {
+                transform: translate(300px, -200px)
+                            rotateX(-45deg)
+                            rotateY(45deg)
+                            scale(1.5);
+                background: green;
+            }
+        }
+
+        @keyframes threeAnimation {
+            from {
+                transform: translate(0, 0)
+                            rotateX(0deg)
+                            rotateY(0deg)
+                            rotateZ(0deg)
+                            scale(0);
+                background: red;
+            }
+
+            to {
+                transform: translate(0px, 200px)
+                           rotateX(60deg)
+                           rotateY(30deg)
+                           rotateZ(20deg)
+                           scale(2);
+                background: purple;
+            }
+        }
+
+        @keyframes fourAnimation {
+            from {
+                transform: translate(0, 0)
+                            rotateX(0deg)
+                            rotateY(0deg)
+                            rotateZ(0deg)
+                            scale(0);
+                background: blue;
+            }
+
+            to {
+                transform: translate(-200px, 200px)
+                            rotateX(300deg)
+                            rotateY(300deg)
+                            rotateZ(300deg)
+                            scale(2.4);
+                background: white;
+            }
+        }
+
+        @keyframes fiveAnimation {
+            from {
+                transform: translate(0, 0)
+                           rotateX(0deg)
+                           rotateY(0deg)
+                           rotateZ(0deg)
+                           scale(0);
+                background: blueviolet;
+            }
+
+            to {
+                transform: translate(200px, 200px)
+                            rotateX(300deg)
+                            rotateY(300deg)
+                            rotateZ(300deg)
+                            scale(2);
+                background: yellow;
+            }
+        }
+
+        @keyframes sixAnimation {
+            from {
+                transform: translate(0, 0)
+                            rotateX(0deg)
+                            rotateY(0deg)
+                            rotateZ(0deg)
+                            scale(0);
+                background: #390;
+            }
+
+            to {
+                transform: translate(0, -200px)
+                           rotateX(300deg)
+                           rotateY(300deg)
+                           rotateZ(300deg)
+                           scale(2.5);
+                background: #9da;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+        <div class="box four"></div>
+        <div class="box five"></div>
+        <div class="box six"></div>
+    </div>
+</body>
+</html>
