@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: yellowgreen;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+            position: absolute;
+            top: 60%;
+            width: 60px;
+            height: 1px;
+            background: transparent;
+            border-bottom: .1vmin solid;
+            padding-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            animation: bubble 1s ease-in-out infinite alternate;
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 1.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 1.3s;
+        }
+
+        .dot:nth-child(4) {
+            animation-delay: 1.4s;
+        }
+
+        .dot:nth-child(5) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes bubble {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>

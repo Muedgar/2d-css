@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: blue;
+            display: grid;
+            place-items: center;
+        }
+
+        .menu {
+            position: absolute;
+            top: 40%;
+            background: transparent;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .menu div {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: white;
+        }
+
+        .menu div:nth-child(1) {
+            animation: drawX 1s ease-in-out infinite;   
+        }
+
+        .menu div:nth-child(2) {
+            animation: openAndClose 1s ease-in-out infinite;   
+        }
+
+        .menu div:nth-child(3) {
+            animation: drawAnotherX 1s ease-in-out infinite;
+        }
+
+        @keyframes openAndClose {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes drawX {
+            from {
+
+                transform: rotateZ(0)
+            }
+            
+            to {
+
+                transform: rotateZ(45deg)
+            }
+        }
+
+        @keyframes drawAnotherX {
+            from {
+
+                transform: rotateZ(0)
+            }
+            
+            to {
+
+                transform: rotateZ(-45deg)
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

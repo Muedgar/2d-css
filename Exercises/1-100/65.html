@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #9585;
+            display: grid;
+            place-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .head {
+            position: absolute;
+            top: 100px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        .body {
+            position: absolute;
+            top: 140px;
+            width: 20px;
+            height: 100px;
+            background: black;
+        }
+
+        .leg {
+            position: absolute;
+            top: 220px;
+            width: 20px;
+            height: 100px;
+            background: black;
+        }
+
+        .leg.left {
+            margin-left: -50px;
+            transform: rotateZ(30deg);
+        }
+
+        .leg.right {
+            margin-right: -50px;
+            transform: rotateZ(-30deg);
+        }
+
+        .arm {
+            position: absolute;
+            top: 100px;
+            width: 20px;
+            height: 100px;
+            background: black;
+        }
+
+        .arm.left {
+            top: 150px;
+            margin-left: -50px;
+            transform: rotateZ(30deg);
+        }
+
+        .arm.right {
+            top: 150px;
+            margin-right: -50px;
+            transform: rotateZ(-30deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+</body>
+</html>

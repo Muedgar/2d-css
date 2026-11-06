@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Animated Eye</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f0dce5;
+            display: grid;
+            place-items: center;
+        }
+
+        .eye {
+            position: relative;
+            width: 160px;
+            height: 100px;
+            background: white;
+            border: 4px solid black;
+            border-radius: 70% 15% 70% 15%;
+            transform: rotate(45deg);
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+        }
+
+        .eye::before {
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #784b32;
+            border-radius: 50%;
+        }
+
+        .eye::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: black;
+            border-radius: 50%;
+            animation: pupil 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes pupil {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="eye"></div>
+</body>
+</html>
