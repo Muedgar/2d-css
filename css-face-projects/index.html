@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Ten Faces in CSS
+    </title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #141a21;
+        color: #efe9df;
+        font: 16px/1.6 system-ui, sans-serif;
+      }
+
+      main {
+        max-width: 1120px;
+        margin: auto;
+        padding: 64px 24px;
+      }
+
+      small {
+        color: #a7b4bc;
+        letter-spacing: .14em;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        letter-spacing: -.07em;
+        line-height: 1.05;
+        margin: 24px 0;
+        font-weight: 500;
+      }
+
+      .intro {
+        color: #b7c1c5;
+        max-width: 58ch;
+        margin-bottom: 40px;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: 16px;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        min-height: 240px;
+        background: var(--tile);
+        color: var(--ink);
+        padding: 28px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: transform .2s;
+      }
+
+      a:hover {
+        transform: translateY(-4px);
+      }
+
+      a:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 4px;
+      }
+
+      a span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        letter-spacing: -.04em;
+        font-weight: 500;
+        margin: 28px 0 12px;
+      }
+
+      a p {
+        font-size: .8rem;
+        opacity: .85;
+      }
+
+      a b {
+        margin-top: auto;
+        font-size: .75rem;
+        font-weight: 400;
+        padding-top: 16px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a {
+          transition: none;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <small>
+        10 SELF-CONTAINED PROJECTS / HTML + CSS
+      </small>
+      <h1>
+        Ten faces.
+        <br>
+        One square at a time.
+      </h1>
+      <p class="intro">
+        Start with a sleepy moon and finish with a full planar portrait. Each face is a separate file. Open it, read the CSS, and make it your own.
+      </p>
+      <section aria-label="Faces from easy to difficult">
+        <a href="01-midnight-moon.html" style="--tile:#20263d;--ink:#f5df9e">
+          <span>
+            01 / EASY
+          </span>
+          <h2>
+            Midnight Moon
+          </h2>
+          <p>
+            Silhouette · border-radius · layered shadows
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="02-alley-cat.html" style="--tile:#e8b991;--ink:#cce783">
+          <span>
+            02 / EASY +
+          </span>
+          <h2>
+            Alley Cat
+          </h2>
+          <p>
+            Shared coordinates · polygon ears · symmetry
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="03-radio-robot.html" style="--tile:#253f49;--ink:#a8f5c9">
+          <span>
+            03 / MODERATE
+          </span>
+          <h2>
+            Radio Robot
+          </h2>
+          <p>
+            Inset geometry · repeating gradients · hover states
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="04-count-crimson.html" style="--tile:#292033;--ink:#e44764">
+          <span>
+            04 / MODERATE
+          </span>
+          <h2>
+            Count Crimson
+          </h2>
+          <p>
+            Angular anatomy · paint order · negative space
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="05-peach-pierrot.html" style="--tile:#bf785f;--ink:#f7dfc4">
+          <span>
+            05 / MODERATE +
+          </span>
+          <h2>
+            Peach Pierrot
+          </h2>
+          <p>
+            Asymmetry · translucent overlays · facial features
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="06-orbit-astronaut.html" style="--tile:#142e40;--ink:#95e1d5">
+          <span>
+            06 / CHALLENGING
+          </span>
+          <h2>
+            Orbit Astronaut
+          </h2>
+          <p>
+            Nested clipping · gradients · glass compositing
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="07-woodland-elf.html" style="--tile:#172f2c;--ink:#dfc79b">
+          <span>
+            07 / CHALLENGING +
+          </span>
+          <h2>
+            Woodland Elf
+          </h2>
+          <p>
+            Interlocking silhouettes · asymmetric planes · tiny accents
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="08-neon-courier.html" style="--tile:#211d35;--ink:#76f5f0">
+          <span>
+            08 / ADVANCED
+          </span>
+          <h2>
+            Neon Courier
+          </h2>
+          <p>
+            Split lighting · graphic occlusion · CSS state
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="09-golden-harlequin.html" style="--tile:#263d48;--ink:#e5b75e">
+          <span>
+            09 / ADVANCED +
+          </span>
+          <h2>
+            Golden Harlequin
+          </h2>
+          <p>
+            Compound silhouettes · mask cutouts · metallic planes
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+        <a href="10-blue-hour-portrait.html" style="--tile:#9aafbd;--ink:#f0b798">
+          <span>
+            10 / MOST DIFFICULT
+          </span>
+          <h2>
+            Blue Hour Portrait
+          </h2>
+          <p>
+            Facial topology · full-plane construction · color relationships
+          </p>
+          <b>
+            Open face ↗
+          </b>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

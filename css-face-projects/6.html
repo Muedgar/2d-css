@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Orbit Astronaut
+    </title>
+    <style>
+      :root {
+        --background: #142e40;
+        --accent: #95e1d5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .orbit {
+        inset: 10% 2%;
+        border: 1px solid #88bfc34d;
+        border-radius: 50%;
+        transform: rotate(-28deg);
+      }
+
+      .helmet {
+        inset: 10%;
+      }
+
+      .rim {
+        inset: 2% 5% 7%;
+        background: #d8e7de;
+        border-radius: 47% 47% 40% 40%;
+        box-shadow: inset -3cqi -2cqi #8fa9aa;
+      }
+
+      .visor {
+        inset: 9% 12% 22%;
+        background: #183c4c;
+        border-radius: 46% 46% 43% 43%;
+        overflow: hidden;
+        border: 1.5cqi solid #587f88;
+      }
+
+      .hood {
+        background: #273745;
+        clip-path: polygon(20% 100%, 14% 41%, 28% 14%, 70% 14%, 86% 41%, 82% 100%);
+      }
+
+      .head {
+        background: #d6a079;
+        clip-path: polygon(
+          33% 24%,
+          67% 24%,
+          76% 40%,
+          70% 70%,
+          57% 87%,
+          44% 87%,
+          29% 70%,
+          24% 40%
+        );
+      }
+
+      .shadow {
+        background: #ae7064;
+        clip-path: polygon(
+          55% 24%,
+          67% 24%,
+          76% 40%,
+          70% 70%,
+          57% 87%,
+          49% 87%,
+          58% 68%,
+          55% 55%,
+          60% 39%
+        );
+      }
+
+      .hair {
+        background: #323541;
+        clip-path: polygon(
+          24% 46%,
+          22% 25%,
+          37% 12%,
+          67% 17%,
+          78% 32%,
+          76% 46%,
+          65% 31%,
+          43% 35%,
+          34% 29%
+        );
+      }
+
+      .eye {
+        inset: auto;
+        top: 49%;
+        width: 13%;
+        height: 3%;
+        background: #343343;
+        border-radius: 50%;
+      }
+
+      .eye.left {
+        left: 32%;
+        transform: rotate(-8deg);
+      }
+
+      .eye.right {
+        right: 30%;
+        transform: rotate(8deg);
+      }
+
+      .nose {
+        background: #905e58;
+        clip-path: polygon(50% 48%, 44% 65%, 54% 65%, 50% 61%);
+      }
+
+      .mouth {
+        background: #754955;
+        clip-path: polygon(41% 73%, 50% 71%, 59% 73%, 51% 77%);
+      }
+
+      .reflection {
+        background: linear-gradient(135deg, #95e1d530, transparent 55%, #3d7fa54d);
+      }
+
+      .shine {
+        background: #d5fff833;
+        clip-path: polygon(5% 0, 25% 0, 80% 100%, 60% 100%);
+      }
+
+      .ear {
+        inset: auto;
+        top: 37%;
+        width: 14%;
+        height: 22%;
+        background: #d8e7de;
+        border: 1.4cqi solid #8fa9aa;
+        border-radius: 25%;
+      }
+
+      .ear.left {
+        left: 0;
+      }
+
+      .ear.right {
+        right: 0;
+      }
+
+      .chin {
+        background: #c2d9d1;
+        clip-path: polygon(
+          12% 66%,
+          26% 73%,
+          37% 83%,
+          63% 83%,
+          74% 73%,
+          88% 66%,
+          85% 83%,
+          69% 95%,
+          31% 95%,
+          15% 83%
+        );
+      }
+
+      .light {
+        inset: 86% 44% 9%;
+        background: #edb967;
+        border-radius: 2cqi;
+        box-shadow: 0 0 3cqi #edb96788;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Orbit Astronaut
+        </h1>
+        <span>
+          06 / CHALLENGING
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Orbit Astronaut, a CSS face illustration">
+        <div class="orbit">
+        </div>
+        <div class="helmet">
+          <div class="rim">
+          </div>
+          <div class="visor">
+            <div class="hood">
+            </div>
+            <div class="head">
+            </div>
+            <div class="shadow">
+            </div>
+            <div class="hair">
+            </div>
+            <div class="eye left">
+            </div>
+            <div class="eye right">
+            </div>
+            <div class="nose">
+            </div>
+            <div class="mouth">
+            </div>
+            <div class="reflection">
+            </div>
+            <div class="shine">
+            </div>
+          </div>
+          <div class="ear left">
+          </div>
+          <div class="ear right">
+          </div>
+          <div class="chin">
+          </div>
+          <div class="light">
+          </div>
+        </div>
+      </div>
+      <p>
+        Nested clipping · gradients · glass compositing
+      </p>
+      <nav>
+        <a href="05-peach-pierrot.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="07-woodland-elf.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

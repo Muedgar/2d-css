@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>03 · The clockwork robot</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #101c2b;
+        }
+
+        .stage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 400px;
+            overflow: hidden;
+            perspective: 850px;
+            background: radial-gradient(ellipse at 50% 35%, #304e68, #15283e 70%);
+            isolation: isolate;
+        }
+
+        .stage::before {
+            content: "";
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            top: calc(50% + 160px);
+            height: 80px;
+            background: radial-gradient(ellipse, #0008, transparent 70%);
+            filter: blur(8px);
+        }
+
+        .model {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+        }
+
+        .model * {
+            transform-style: preserve-3d;
+        }
+
+        .box {
+            position: absolute;
+            width: var(--w);
+            height: var(--h);
+        }
+
+        .face {
+            position: absolute;
+            background: var(--paint);
+            border: 1px solid #ffffff25;
+            box-shadow: inset 0 0 20px #0002;
+        }
+
+        .face.front,.face.back {
+            width: var(--w);
+            height: var(--h);
+        }
+
+        .face.front {
+            transform: translateZ(calc(var(--d) / 2));
+            background-image: linear-gradient(135deg,#fff2,transparent);
+        }
+
+        .face.back {
+            transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+        }
+
+        .face.right,.face.left {
+            left: calc((var(--w) - var(--d)) / 2);
+            width: var(--d);
+            height: var(--h);
+            background-image: linear-gradient(#0002,#0004);
+        }
+
+        .face.right {
+            transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+        }
+
+        .face.left {
+            transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+        }
+
+        .face.top,.face.bottom {
+            top: calc((var(--h) - var(--d)) / 2);
+            width: var(--w);
+            height: var(--d);
+        }
+
+        .face.top {
+            transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+            background-image: linear-gradient(#fff4,#fff1);
+        }
+
+        .face.bottom {
+            transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+        }
+
+        .hub {
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,#fff,#dca956);
+        }
+
+        .ray {
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: var(--r);
+            height: 6px;
+            background: #edc884;
+            transform-origin: 0 50%;
+            transform: rotateZ(var(--a));
+        }
+
+        .cab {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .post {
+            position: absolute;
+            top: -14px;
+            width: 3px;
+            height: 38px;
+            background: linear-gradient(90deg,#678091,#eee,#678091);
+        }
+
+        .robot {
+            transform: rotateX(-10deg) rotateY(-20deg);
+        }
+
+        .bot {
+            animation: bob 3s ease-in-out infinite;
+        }
+
+        .eye {
+            position: absolute;
+            top: -87px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #fff5b2;
+            box-shadow: 0 0 14px #ffdb71;
+            transform: translateZ(39px);
+        }
+
+        .one {
+            left: -40px;
+        }
+
+        .two {
+            left: 18px;
+        }
+
+        .mouth {
+            position: absolute;
+            left: -20px;
+            top: -51px;
+            width: 40px;
+            height: 6px;
+            background: #335266;
+            transform: translateZ(39px);
+        }
+
+        .antenna {
+            position: absolute;
+            left: -3px;
+            top: -143px;
+            width: 6px;
+            height: 33px;
+            background: #e8bb71;
+        }
+
+        .antenna::after {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f899ac;
+        }
+
+        .badge {
+            position: absolute;
+            top: 25px;
+            transform: translateZ(35px);
+            animation: gear 6s linear infinite;
+        }
+
+        .badge .ray {
+            width: 25px;
+            height: 7px;
+            top: -3.5px;
+            background: #f7c97a;
+        }
+
+        .badge .hub {
+            width: 22px;
+            height: 22px;
+            left: -11px;
+            top: -11px;
+            background: #597285;
+        }
+
+        @keyframes gear {
+            to {
+                transform: translateZ(35px) rotateZ(360deg);
+            }
+        }
+
+        @keyframes bob {
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .model {
+                zoom: .78;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .stage * {
+                animation-play-state: paused !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="model robot">
+            <div class="bot">
+                <div class="box torso" style="--w:100px;--h:100px;--d:65px;--paint:#70cbc4;left:-50px;top:-20px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box head" style="--w:120px;--h:75px;--d:75px;--paint:#a7e6dc;left:-60px;top:-110px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box left-arm" style="--w:25px;--h:90px;--d:30px;--paint:#e8bb71;left:-88px;top:-15px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box right-arm" style="--w:25px;--h:90px;--d:30px;--paint:#e8bb71;left:63px;top:-15px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box foot" style="--w:42px;--h:24px;--d:70px;--paint:#5b7eac;left:-50px;top:103px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box foot" style="--w:42px;--h:24px;--d:70px;--paint:#5b7eac;left:8px;top:103px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <i class="eye one"></i>
+                <i class="eye two"></i>
+                <i class="mouth"></i>
+                <i class="antenna"></i>
+                <div class="badge">
+                    <div class="ray" style="--a:0deg;--r:16px"></div>
+                    <div class="ray" style="--a:45deg;--r:16px"></div>
+                    <div class="ray" style="--a:90deg;--r:16px"></div>
+                    <div class="ray" style="--a:135deg;--r:16px"></div>
+                    <div class="ray" style="--a:180deg;--r:16px"></div>
+                    <div class="ray" style="--a:225deg;--r:16px"></div>
+                    <div class="ray" style="--a:270deg;--r:16px"></div>
+                    <div class="ray" style="--a:315deg;--r:16px"></div>
+                    <b class="hub"></b>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

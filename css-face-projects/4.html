@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Count Crimson
+    </title>
+    <style>
+      :root {
+        --background: #292033;
+        --accent: #e44764;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .collar {
+        background: #772c4b;
+        clip-path: polygon(9% 50%, 38% 68%, 50% 84%, 62% 68%, 91% 50%, 79% 90%, 21% 90%);
+      }
+
+      .ear {
+        background: #b49db8;
+      }
+
+      .ear.left {
+        clip-path: polygon(27% 40%, 15% 34%, 23% 59%, 31% 62%);
+      }
+
+      .ear.right {
+        clip-path: polygon(73% 40%, 85% 34%, 77% 59%, 69% 62%);
+      }
+
+      .head {
+        background: #e2cfce;
+        clip-path: polygon(
+          30% 19%,
+          70% 19%,
+          76% 33%,
+          70% 65%,
+          58% 79%,
+          50% 84%,
+          42% 79%,
+          30% 65%,
+          24% 33%
+        );
+      }
+
+      .face-shadow {
+        background: #b49db8;
+        clip-path: polygon(
+          50% 20%,
+          70% 19%,
+          76% 33%,
+          70% 65%,
+          58% 79%,
+          50% 84%,
+          56% 61%,
+          50% 52%
+        );
+      }
+
+      .hair {
+        background: #242236;
+        clip-path: polygon(
+          24% 39%,
+          20% 25%,
+          28% 12%,
+          48% 9%,
+          68% 13%,
+          80% 26%,
+          76% 41%,
+          67% 28%,
+          57% 25%,
+          50% 37%,
+          43% 25%,
+          33% 28%
+        );
+      }
+
+      .brow {
+        background: #242236;
+      }
+
+      .brow.left {
+        clip-path: polygon(31% 41%, 46% 46%, 46% 49%, 32% 45%);
+      }
+
+      .brow.right {
+        clip-path: polygon(54% 46%, 69% 41%, 68% 45%, 54% 49%);
+      }
+
+      .eye {
+        background: #f7e8d9;
+      }
+
+      .eye.left {
+        clip-path: polygon(32% 48%, 45% 51%, 37% 54%);
+      }
+
+      .eye.right {
+        clip-path: polygon(55% 51%, 68% 48%, 63% 54%);
+      }
+
+      .iris {
+        inset: auto;
+        top: 50%;
+        width: 3%;
+        height: 3%;
+        background: #bd3256;
+        border-radius: 50%;
+      }
+
+      .iris.left {
+        left: 37%;
+      }
+
+      .iris.right {
+        right: 37%;
+      }
+
+      .nose {
+        background: #947b9c;
+        clip-path: polygon(50% 46%, 44% 61%, 53% 63%, 50% 59%);
+      }
+
+      .mouth {
+        background: #54233f;
+        clip-path: polygon(36% 66%, 50% 69%, 64% 66%, 59% 74%, 50% 77%, 41% 74%);
+      }
+
+      .fang {
+        background: #fff2db;
+      }
+
+      .fang.left {
+        clip-path: polygon(39% 67%, 45% 68%, 43% 76%);
+      }
+
+      .fang.right {
+        clip-path: polygon(55% 68%, 61% 67%, 57% 76%);
+      }
+
+      .shirt {
+        background: #242236;
+        clip-path: polygon(21% 90%, 39% 81%, 50% 89%, 61% 81%, 79% 90%, 85% 100%, 15% 100%);
+      }
+
+      .jewel {
+        background: #e44764;
+        clip-path: polygon(50% 87%, 54% 92%, 50% 98%, 46% 92%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Count Crimson
+        </h1>
+        <span>
+          04 / MODERATE
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Count Crimson, a CSS face illustration">
+        <div class="collar">
+        </div>
+        <div class="ear left">
+        </div>
+        <div class="ear right">
+        </div>
+        <div class="head">
+        </div>
+        <div class="face-shadow">
+        </div>
+        <div class="hair">
+        </div>
+        <div class="brow left">
+        </div>
+        <div class="brow right">
+        </div>
+        <div class="eye left">
+        </div>
+        <div class="eye right">
+        </div>
+        <div class="iris left">
+        </div>
+        <div class="iris right">
+        </div>
+        <div class="nose">
+        </div>
+        <div class="mouth">
+        </div>
+        <div class="fang left">
+        </div>
+        <div class="fang right">
+        </div>
+        <div class="shirt">
+        </div>
+        <div class="jewel">
+        </div>
+      </div>
+      <p>
+        Angular anatomy · paint order · negative space
+      </p>
+      <nav>
+        <a href="03-radio-robot.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="05-peach-pierrot.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Radio Robot
+    </title>
+    <style>
+      :root {
+        --background: #253f49;
+        --accent: #a8f5c9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .antenna {
+        inset: 11% 49% 76%;
+        background: #e7b85f;
+      }
+
+      .signal {
+        inset: 8% 46% 84%;
+        background: #f7826c;
+        border-radius: 50%;
+        box-shadow: 0 0 5cqi #f7826c66;
+      }
+
+      .ear {
+        inset: auto;
+        top: 43%;
+        width: 7%;
+        height: 20%;
+        background: #759490;
+        border: 1cqi solid #2a444c;
+        border-radius: 15%;
+      }
+
+      .ear.left {
+        left: 13%;
+      }
+
+      .ear.right {
+        right: 13%;
+      }
+
+      .shell {
+        background: #bdcdb8;
+        clip-path: polygon(
+          25% 23%,
+          75% 23%,
+          82% 31%,
+          82% 76%,
+          73% 84%,
+          27% 84%,
+          18% 76%,
+          18% 31%
+        );
+      }
+
+      .side-plane {
+        background: #7d9e98;
+        clip-path: polygon(75% 23%, 82% 31%, 82% 76%, 73% 84%, 66% 84%, 73% 73%, 73% 32%);
+      }
+
+      .screen {
+        inset: 34% 25% 40%;
+        background: #203841;
+        border: 1cqi solid #6d908a;
+        border-radius: 12%;
+      }
+
+      .eye {
+        inset: auto;
+        top: 42%;
+        width: 12%;
+        height: 5%;
+        background: #a8f5c9;
+        box-shadow: 0 0 3cqi #a8f5c966;
+      }
+
+      .eye.left {
+        left: 31%;
+      }
+
+      .eye.right {
+        right: 31%;
+      }
+
+      .nose {
+        background: #688b86;
+        clip-path: polygon(48% 56%, 54% 56%, 56% 63%, 46% 63%);
+      }
+
+      .speaker {
+        inset: 67% 34% 23%;
+        background: repeating-linear-gradient(90deg, #29454c 0 1.4cqi, #9bb7a5 1.4cqi 3cqi);
+        border: 1cqi solid #6d908a;
+        border-radius: 12%;
+      }
+
+      .bolt {
+        inset: auto;
+        top: 73%;
+        width: 3%;
+        height: 3%;
+        background: #31525a;
+        border-radius: 50%;
+      }
+
+      .bolt.left {
+        left: 24%;
+      }
+
+      .bolt.right {
+        right: 24%;
+      }
+
+      .neck {
+        inset: 84% 40% 8%;
+        background: repeating-linear-gradient(#38555a 0 1cqi, #7b9b93 1cqi 2cqi);
+      }
+
+      .face:hover .eye {
+        height: 2%;
+        top: 43.5%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Radio Robot
+        </h1>
+        <span>
+          03 / MODERATE
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Radio Robot, a CSS face illustration">
+        <div class="antenna">
+        </div>
+        <div class="signal">
+        </div>
+        <div class="ear left">
+        </div>
+        <div class="ear right">
+        </div>
+        <div class="shell">
+        </div>
+        <div class="side-plane">
+        </div>
+        <div class="screen">
+        </div>
+        <div class="eye left">
+        </div>
+        <div class="eye right">
+        </div>
+        <div class="nose">
+        </div>
+        <div class="speaker">
+        </div>
+        <div class="bolt left">
+        </div>
+        <div class="bolt right">
+        </div>
+        <div class="neck">
+        </div>
+      </div>
+      <p>
+        Inset geometry · repeating gradients · hover states
+      </p>
+      <nav>
+        <a href="02-alley-cat.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="04-count-crimson.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

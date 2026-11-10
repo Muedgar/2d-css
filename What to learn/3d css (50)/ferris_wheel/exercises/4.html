@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>04 · The solar-powered satellite</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #101c2b;
+        }
+
+        .stage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 400px;
+            overflow: hidden;
+            perspective: 850px;
+            background: radial-gradient(ellipse at 50% 35%, #304e68, #15283e 70%);
+            isolation: isolate;
+        }
+
+        .stage::before {
+            content: "";
+            position: absolute;
+            left: 15%;
+            right: 15%;
+            top: calc(50% + 160px);
+            height: 80px;
+            background: radial-gradient(ellipse, #0008, transparent 70%);
+            filter: blur(8px);
+        }
+
+        .model {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+        }
+
+        .model * {
+            transform-style: preserve-3d;
+        }
+
+        .box {
+            position: absolute;
+            width: var(--w);
+            height: var(--h);
+        }
+
+        .face {
+            position: absolute;
+            background: var(--paint);
+            border: 1px solid #ffffff25;
+            box-shadow: inset 0 0 20px #0002;
+        }
+
+        .face.front,.face.back {
+            width: var(--w);
+            height: var(--h);
+        }
+
+        .face.front {
+            transform: translateZ(calc(var(--d) / 2));
+            background-image: linear-gradient(135deg,#fff2,transparent);
+        }
+
+        .face.back {
+            transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+        }
+
+        .face.right,.face.left {
+            left: calc((var(--w) - var(--d)) / 2);
+            width: var(--d);
+            height: var(--h);
+            background-image: linear-gradient(#0002,#0004);
+        }
+
+        .face.right {
+            transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+        }
+
+        .face.left {
+            transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+        }
+
+        .face.top,.face.bottom {
+            top: calc((var(--h) - var(--d)) / 2);
+            width: var(--w);
+            height: var(--d);
+        }
+
+        .face.top {
+            transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+            background-image: linear-gradient(#fff4,#fff1);
+        }
+
+        .face.bottom {
+            transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+        }
+
+        .hub {
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,#fff,#dca956);
+        }
+
+        .ray {
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: var(--r);
+            height: 6px;
+            background: #edc884;
+            transform-origin: 0 50%;
+            transform: rotateZ(var(--a));
+        }
+
+        .cab {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .post {
+            position: absolute;
+            top: -14px;
+            width: 3px;
+            height: 38px;
+            background: linear-gradient(90deg,#678091,#eee,#678091);
+        }
+
+        .satellite {
+            transform: rotateX(-20deg) rotateY(-30deg);
+        }
+
+        .craft {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .panel .top {
+            background: repeating-linear-gradient(90deg,transparent 0 20px,#8bcbe5 20px 22px),repeating-linear-gradient(0deg,#25548a 0 18px,#8bcbe5 18px 20px);
+        }
+
+        .dish {
+            position: absolute;
+            left: -35px;
+            top: -110px;
+            width: 70px;
+            height: 70px;
+            border: 7px solid #e8edf2;
+            border-radius: 50%;
+            background: radial-gradient(#3e6983,#b8d9e7);
+            transform: rotateX(50deg);
+        }
+
+        .mast {
+            position: absolute;
+            left: -3px;
+            top: -75px;
+            width: 6px;
+            height: 36px;
+            background: #dae7ee;
+        }
+
+        .beacon {
+            position: absolute;
+            left: -5px;
+            top: -119px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff967f;
+            box-shadow: 0 0 24px #ff967f;
+        }
+
+        .planet {
+            position: absolute;
+            left: -80px;
+            top: 135px;
+            width: 160px;
+            height: 55px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at 30% 30%,#8fe1ce,#376797 70%);
+            box-shadow: 0 0 35px #5fb4ca66;
+            transform: rotateX(35deg);
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-18px) rotateY(15deg);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .model {
+                zoom: .78;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .stage * {
+                animation-play-state: paused !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="model satellite">
+            <div class="craft">
+                <div class="box core" style="--w:85px;--h:85px;--d:85px;--paint:#eac071;left:-42px;top:-42px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box panel" style="--w:135px;--h:7px;--d:85px;--paint:#477eb7;left:-190px;top:-4px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="box panel" style="--w:135px;--h:7px;--d:85px;--paint:#477eb7;left:55px;top:-4px;transform:translateZ(0px)">
+                    <span class="face front"></span>
+                    <span class="face back"></span>
+                    <span class="face right"></span>
+                    <span class="face left"></span>
+                    <span class="face top"></span>
+                    <span class="face bottom"></span>
+                </div>
+                <div class="dish"></div>
+                <div class="mast"></div>
+                <div class="beacon"></div>
+            </div>
+            <div class="planet"></div>
+        </div>
+    </div>
+</body>
+</html>

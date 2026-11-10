@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Peach Pierrot
+    </title>
+    <style>
+      :root {
+        --background: #bf785f;
+        --accent: #f7dfc4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .ruff {
+        background: #eee4d6;
+        clip-path: polygon(
+          23% 73%,
+          33% 76%,
+          35% 69%,
+          44% 76%,
+          50% 71%,
+          56% 76%,
+          65% 69%,
+          67% 76%,
+          77% 73%,
+          82% 83%,
+          69% 91%,
+          50% 94%,
+          31% 91%,
+          18% 83%
+        );
+      }
+
+      .ear {
+        inset: auto;
+        top: 42%;
+        width: 9%;
+        height: 16%;
+        background: #d7ad9b;
+        border-radius: 50%;
+      }
+
+      .ear.left {
+        left: 20%;
+      }
+
+      .ear.right {
+        right: 20%;
+      }
+
+      .head {
+        background: #f7dfc4;
+        clip-path: polygon(
+          32% 24%,
+          68% 24%,
+          75% 42%,
+          71% 62%,
+          62% 76%,
+          50% 83%,
+          38% 76%,
+          29% 62%,
+          25% 42%
+        );
+      }
+
+      .shadow {
+        background: #dcb89f;
+        clip-path: polygon(
+          59% 25%,
+          68% 24%,
+          75% 42%,
+          71% 62%,
+          62% 76%,
+          50% 83%,
+          55% 72%,
+          64% 59%,
+          65% 40%
+        );
+      }
+
+      .cap {
+        background: #334953;
+        clip-path: polygon(
+          24% 36%,
+          28% 18%,
+          43% 8%,
+          64% 12%,
+          76% 30%,
+          70% 35%,
+          54% 29%,
+          38% 31%
+        );
+      }
+
+      .cap-fold {
+        background: #526b70;
+        clip-path: polygon(43% 8%, 50% 20%, 54% 29%, 38% 31%, 41% 20%);
+      }
+
+      .eye-paint {
+        background: #527b83;
+      }
+
+      .eye-paint.left {
+        clip-path: polygon(37% 34%, 43% 47%, 35% 60%, 29% 47%);
+      }
+
+      .eye-paint.right {
+        clip-path: polygon(62% 35%, 70% 48%, 63% 60%, 57% 48%);
+      }
+
+      .eye {
+        background: #273d47;
+      }
+
+      .eye.left {
+        clip-path: polygon(29% 47%, 35% 44%, 43% 47%, 36% 48%);
+      }
+
+      .eye.right {
+        clip-path: polygon(57% 49%, 63% 46%, 70% 48%, 63% 51%);
+      }
+
+      .tear {
+        background: #527b83;
+        clip-path: polygon(65% 60%, 67% 66%, 65% 69%, 63% 66%);
+      }
+
+      .nose {
+        inset: auto;
+        top: 53%;
+        left: 45%;
+        width: 10%;
+        height: 9%;
+        background: #cb654e;
+        border-radius: 48%;
+        box-shadow: inset -1cqi -1cqi #aa4d43;
+      }
+
+      .cheek {
+        inset: auto;
+        top: 59%;
+        width: 10%;
+        height: 7%;
+        background: #c86c59;
+        opacity: .35;
+        border-radius: 50%;
+      }
+
+      .cheek.left {
+        left: 29%;
+      }
+
+      .cheek.right {
+        right: 29%;
+      }
+
+      .lip-top {
+        background: #ab4e46;
+        clip-path: polygon(40% 69%, 46% 66%, 50% 68%, 54% 66%, 60% 69%, 50% 71%);
+      }
+
+      .lip-bottom {
+        background: #d28367;
+        clip-path: polygon(40% 69%, 50% 71%, 60% 69%, 54% 75%, 47% 76%);
+      }
+
+      .lip-light {
+        background: #ffffff66;
+        clip-path: polygon(48% 73%, 54% 72%, 52% 74%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Peach Pierrot
+        </h1>
+        <span>
+          05 / MODERATE +
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Peach Pierrot, a CSS face illustration">
+        <div class="ruff">
+        </div>
+        <div class="ear left">
+        </div>
+        <div class="ear right">
+        </div>
+        <div class="head">
+        </div>
+        <div class="shadow">
+        </div>
+        <div class="cap">
+        </div>
+        <div class="cap-fold">
+        </div>
+        <div class="eye-paint left">
+        </div>
+        <div class="eye-paint right">
+        </div>
+        <div class="eye left">
+        </div>
+        <div class="eye right">
+        </div>
+        <div class="tear">
+        </div>
+        <div class="nose">
+        </div>
+        <div class="cheek left">
+        </div>
+        <div class="cheek right">
+        </div>
+        <div class="lip-top">
+        </div>
+        <div class="lip-bottom">
+        </div>
+        <div class="lip-light">
+        </div>
+      </div>
+      <p>
+        Asymmetry · translucent overlays · facial features
+      </p>
+      <nav>
+        <a href="04-count-crimson.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="06-orbit-astronaut.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Neon Courier
+    </title>
+    <style>
+      :root {
+        --background: #211d35;
+        --accent: #76f5f0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .jacket {
+        background: #29273f;
+        clip-path: polygon(36% 76%, 63% 76%, 85% 88%, 94% 100%, 6% 100%, 17% 88%);
+      }
+
+      .neck {
+        background: #b66485;
+        clip-path: polygon(41% 66%, 62% 65%, 61% 81%, 52% 89%, 38% 79%);
+      }
+
+      .head {
+        background: #d28e98;
+        clip-path: polygon(
+          35% 20%,
+          63% 17%,
+          76% 32%,
+          72% 57%,
+          66% 71%,
+          53% 81%,
+          39% 72%,
+          27% 51%,
+          28% 34%
+        );
+      }
+
+      .warm-plane {
+        background: #ef9c9e;
+        clip-path: polygon(
+          35% 20%,
+          54% 19%,
+          48% 38%,
+          52% 51%,
+          44% 58%,
+          46% 69%,
+          39% 72%,
+          27% 51%,
+          28% 34%
+        );
+      }
+
+      .cool-plane {
+        background: #796ba8;
+        clip-path: polygon(
+          63% 17%,
+          76% 32%,
+          72% 57%,
+          66% 71%,
+          53% 81%,
+          58% 66%,
+          64% 54%,
+          59% 44%
+        );
+      }
+
+      .cheek {
+        background: #e26d98;
+        clip-path: polygon(30% 51%, 43% 54%, 47% 60%, 37% 65%);
+      }
+
+      .ear {
+        background: #bb739a;
+        clip-path: polygon(71% 40%, 81% 36%, 80% 52%, 70% 61%);
+      }
+
+      .hair-back {
+        background: #26233b;
+        clip-path: polygon(
+          22% 49%,
+          19% 28%,
+          30% 12%,
+          51% 8%,
+          76% 17%,
+          82% 31%,
+          78% 43%,
+          69% 33%,
+          29% 43%
+        );
+      }
+
+      .hair {
+        background: #524365;
+        clip-path: polygon(
+          19% 28%,
+          30% 12%,
+          51% 8%,
+          69% 13%,
+          57% 26%,
+          34% 35%,
+          25% 45%,
+          28% 27%
+        );
+      }
+
+      .hair-light {
+        background: #9e6689;
+        clip-path: polygon(30% 12%, 51% 8%, 42% 16%, 25% 31%);
+      }
+
+      .brow {
+        background: #47334e;
+        clip-path: polygon(31% 39%, 42% 36%, 49% 39%, 47% 42%, 40% 40%);
+      }
+
+      .eye {
+        background: #302e48;
+        clip-path: polygon(32% 44%, 41% 42%, 48% 45%, 40% 47%, 39% 44%);
+      }
+
+      .nose {
+        background: #9c5e8a;
+        clip-path: polygon(53% 41%, 49% 55%, 45% 58%, 55% 61%, 59% 57%, 54% 55%);
+      }
+
+      .nostril {
+        background: #523855;
+        clip-path: polygon(52% 58%, 56% 57%, 55% 59%);
+      }
+
+      .lip-top {
+        background: #6b3b65;
+        clip-path: polygon(43% 66%, 49% 63%, 53% 65%, 58% 64%, 62% 66%, 54% 69%);
+      }
+
+      .lip-bottom {
+        background: #d890ab;
+        clip-path: polygon(43% 66%, 54% 69%, 62% 66%, 56% 72%, 50% 71%);
+      }
+
+      .visor {
+        background: #76f5f0b0;
+        clip-path: polygon(53% 36%, 76% 33%, 75% 47%, 55% 50%);
+        transition: opacity .3s;
+      }
+
+      .visor-edge {
+        background: #b6fff5;
+        clip-path: polygon(53% 36%, 76% 33%, 76% 34%, 54% 37%, 56% 49%, 55% 50%);
+      }
+
+      .visor-glare {
+        background: #e0fffa80;
+        clip-path: polygon(63% 35%, 67% 34%, 62% 49%, 58% 49%);
+      }
+
+      .earpiece {
+        background: #302d48;
+        clip-path: polygon(74% 37%, 80% 36%, 78% 53%, 72% 55%);
+      }
+
+      .earpiece-light {
+        background: #76f5f0;
+        clip-path: polygon(76% 40%, 78% 39%, 76% 49%, 74% 50%);
+      }
+
+      .stripe {
+        background: #f292b8;
+        clip-path: polygon(17% 88%, 25% 84%, 39% 100%, 31% 100%);
+      }
+
+      .collar {
+        background: #42405b;
+        clip-path: polygon(
+          36% 76%,
+          48% 88%,
+          42% 94%,
+          28% 81%,
+          36% 76%,
+          63% 76%,
+          71% 81%,
+          56% 95%,
+          52% 88%
+        );
+      }
+
+      .face:hover .visor {
+        opacity: .3;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Neon Courier
+        </h1>
+        <span>
+          08 / ADVANCED
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Neon Courier, a CSS face illustration">
+        <div class="jacket">
+        </div>
+        <div class="neck">
+        </div>
+        <div class="head">
+        </div>
+        <div class="warm-plane">
+        </div>
+        <div class="cool-plane">
+        </div>
+        <div class="cheek">
+        </div>
+        <div class="ear">
+        </div>
+        <div class="hair-back">
+        </div>
+        <div class="hair">
+        </div>
+        <div class="hair-light">
+        </div>
+        <div class="brow">
+        </div>
+        <div class="eye">
+        </div>
+        <div class="nose">
+        </div>
+        <div class="nostril">
+        </div>
+        <div class="lip-top">
+        </div>
+        <div class="lip-bottom">
+        </div>
+        <div class="visor">
+        </div>
+        <div class="visor-edge">
+        </div>
+        <div class="visor-glare">
+        </div>
+        <div class="earpiece">
+        </div>
+        <div class="earpiece-light">
+        </div>
+        <div class="stripe">
+        </div>
+        <div class="collar">
+        </div>
+      </div>
+      <p>
+        Split lighting · graphic occlusion · CSS state
+      </p>
+      <nav>
+        <a href="07-woodland-elf.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="09-golden-harlequin.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

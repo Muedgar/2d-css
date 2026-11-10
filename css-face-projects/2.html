@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Alley Cat
+    </title>
+    <style>
+      :root {
+        --background: #e8b991;
+        --accent: #cce783;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--background);
+        color: var(--accent);
+        font-family: system-ui, sans-serif;
+      }
+
+      main {
+        width: min(92vw, 680px);
+        padding: 28px 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 500;
+        letter-spacing: -.04em;
+      }
+
+      header span {
+        font-size: .65rem;
+        letter-spacing: .12em;
+        white-space: nowrap;
+      }
+
+      .face {
+        position: relative;
+        width: min(100%, 68svh);
+        margin: 18px auto;
+        aspect-ratio: 1;
+        container-type: inline-size;
+        isolation: isolate;
+      }
+
+      .face div {
+        position: absolute;
+      }
+
+      .face :where(div) {
+        inset: 0;
+      }
+
+      .face div {
+        pointer-events: none;
+      }
+
+      .face {
+        pointer-events: auto;
+      }
+
+      p {
+        font-size: .75rem;
+        letter-spacing: .02em;
+        opacity: .8;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: .75rem;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 4px;
+      }
+
+      a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 6px;
+      }
+
+      .ear {
+        background: #33334d;
+      }
+
+      .ear.left {
+        clip-path: polygon(21% 46%, 16% 12%, 44% 31%);
+      }
+
+      .ear.right {
+        clip-path: polygon(56% 31%, 84% 12%, 79% 46%);
+      }
+
+      .inner-ear {
+        background: #d9899d;
+      }
+
+      .inner-ear.left {
+        clip-path: polygon(25% 39%, 22% 21%, 37% 33%);
+      }
+
+      .inner-ear.right {
+        clip-path: polygon(63% 33%, 78% 21%, 75% 39%);
+      }
+
+      .head {
+        inset: 29% 17% 17%;
+        background: #33334d;
+        border-radius: 43% 43% 48% 48%;
+      }
+
+      .mask {
+        background: #555570;
+        clip-path: polygon(50% 29%, 43% 45%, 50% 62%, 57% 45%);
+      }
+
+      .muzzle {
+        inset: 60% 33% 20%;
+        background: #ddd3cb;
+        border-radius: 45%;
+      }
+
+      .eye {
+        inset: auto;
+        top: 47%;
+        width: 20%;
+        height: 10%;
+        background: #cce783;
+        border-radius: 12% 80% 12% 80%;
+      }
+
+      .eye.left {
+        left: 25%;
+        transform: rotate(-12deg);
+      }
+
+      .eye.right {
+        right: 25%;
+        transform: scaleX(-1) rotate(-12deg);
+      }
+
+      .pupil {
+        inset: auto;
+        top: 47%;
+        width: 2%;
+        height: 10%;
+        background: #232338;
+        border-radius: 50%;
+      }
+
+      .pupil.left {
+        left: 35%;
+      }
+
+      .pupil.right {
+        right: 35%;
+      }
+
+      .nose {
+        background: #b86c84;
+        clip-path: polygon(44% 63%, 56% 63%, 50% 70%);
+      }
+
+      .mouth {
+        inset: 69% 43% 24%;
+        border-bottom: .6cqi solid #33334d;
+        border-radius: 50%;
+      }
+
+      .whisker {
+        inset: auto;
+        top: 64%;
+        width: 26%;
+        height: .5%;
+        background: #a9a7ba;
+      }
+
+      .whisker.left {
+        left: 9%;
+        transform-origin: right;
+      }
+
+      .whisker.right {
+        right: 9%;
+        transform-origin: left;
+      }
+
+      .whisker.left.upper, .whisker.right.lower {
+        transform: rotate(8deg);
+      }
+
+      .whisker.left.lower, .whisker.right.upper {
+        transform: rotate(-8deg);
+      }
+
+      .whisker.lower {
+        top: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>
+          Alley Cat
+        </h1>
+        <span>
+          02 / EASY +
+        </span>
+      </header>
+      <div class="face" role="img" aria-label="Alley Cat, a CSS face illustration">
+        <div class="ear left">
+        </div>
+        <div class="ear right">
+        </div>
+        <div class="inner-ear left">
+        </div>
+        <div class="inner-ear right">
+        </div>
+        <div class="head">
+        </div>
+        <div class="mask">
+        </div>
+        <div class="muzzle">
+        </div>
+        <div class="eye left">
+        </div>
+        <div class="eye right">
+        </div>
+        <div class="pupil left">
+        </div>
+        <div class="pupil right">
+        </div>
+        <div class="nose">
+        </div>
+        <div class="mouth">
+        </div>
+        <div class="whisker left upper">
+        </div>
+        <div class="whisker left lower">
+        </div>
+        <div class="whisker right upper">
+        </div>
+        <div class="whisker right lower">
+        </div>
+      </div>
+      <p>
+        Shared coordinates · polygon ears · symmetry
+      </p>
+      <nav>
+        <a href="01-midnight-moon.html">
+          Previous
+        </a>
+        <a href="index.html">
+          All faces
+        </a>
+        <a href="03-radio-robot.html">
+          Next
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>
